@@ -1,0 +1,1 @@
+The contributed folder exists for you to add your own examples (and submit as a PR). You can use `rubocop` to warn of egregious errors that might embarrass you at a later date (not all warnings need be heeded). Use UTF8 encoding, unix line endings indentation of two spaces (do not use tabs).
