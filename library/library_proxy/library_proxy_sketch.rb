@@ -4,7 +4,7 @@ require 'picrate'
 class LibraryProxySketch < Processing::App
 
   # A simple demonstration of vanilla processing 'reflection' methods using
-  # propane :library_proxy. See my_library.rb code for the guts.
+  # picrate :library_proxy. See my_library.rb code for the guts.
   load_libraries :library_proxy, :plibrary
 
   def settings

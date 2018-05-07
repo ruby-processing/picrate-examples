@@ -8,8 +8,8 @@ In [german][german]
 
 ### Examples ###
 
-The solid_type sketch is a variant of an Amon Owed sketch requires propane-2.0.7 (or latest github version).
-Requires [geomerative.gem][gem] and hemesh library, see [guide to install vanilla processing libraries][guide] in propane. You need to do something similar for vanilla processing pdf library (I have copy installed for JRubyArt), there might be other ways to get it eg github, ie without requiring a full vanilla processing install.
+The solid_type sketch is a variant of an Amon Owed sketch requires picrate-2.0.7 (or latest github version).
+Requires [geomerative.gem][gem] and hemesh library, see [guide to install vanilla processing libraries][guide] in picrate. You need to do something similar for vanilla processing pdf library (I have copy installed for JRubyArt), there might be other ways to get it eg github, ie without requiring a full vanilla processing install.
 
 NB: to load `ttf` also known as true type fonts you should us absolute path unless they are included in the data folder (then use `data_path` wrapper)
 
@@ -24,4 +24,4 @@ Here is a collection on [Open Processing][open_processing]
 [german]:https://lernprocessing.wordpress.com/2011/11/15/geomerative-library/
 [open_processing]:http://www.openprocessing.org/collection/1374
 [gem]:https://github.com/ruby-processing/geomerativegem/
-[guide]:https://ruby-processing.github.io/propane/contributed
+[guide]:https://ruby-processing.github.io/picrate/contributed

@@ -22,7 +22,7 @@ require 'geomerative'
 #
 # More info on these tutorials and workshops at :
 # www.freeartbureau.org/blog
-# translated for propane by Martin Prout
+# translated for picrate by Martin Prout
 class ExtraBright < Processing::App
   load_library :f_agent
   attr_reader :my_agents

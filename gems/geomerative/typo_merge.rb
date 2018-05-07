@@ -26,7 +26,7 @@ require 'geomerative'
 # More info on these tutorials and workshops at :
 # www.freeartbureau.org/blog
 #
-# Adapted for propane by Martin Prout
+# Adapted for picrate by Martin Prout
 #######################
 class TypoMerge < Processing::App
   attr_reader :my_font, :stop, :xoff, :yoff, :x_inc, :y_inc

@@ -3,7 +3,7 @@ require 'picrate'
 require 'geomerative'
 # Move image round screen with mouse
 # top left to view least polygonized version
-# NB: constrained_map is a propane method
+# NB: constrained_map is a picrate method
 class HelloPolygonize < Processing::App
 
   attr_reader :shp

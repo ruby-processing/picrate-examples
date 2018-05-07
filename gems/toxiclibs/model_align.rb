@@ -2,9 +2,9 @@
 require 'picrate'
 require 'toxiclibs'
 require 'arcball'
-# A propane sketch
+# A picrate sketch
 #
-# Copyright (c) 2010 Karsten Schmidt & propane version Martin Prout 2016
+# Copyright (c) 2010 Karsten Schmidt & picrate version Martin Prout 2016
 # This library is free software you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
 # License as published by the Free Software Foundation either

@@ -1,6 +1,6 @@
 require 'picrate'
 require 'toxiclibs'
-# This inner class demonstrates the use of propane emulation of
+# This inner class demonstrates the use of picrate emulation of
 # Java inner classes. The Balls are able to call Processing::App methods.
 class Ball
   include Processing::Proxy

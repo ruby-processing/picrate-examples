@@ -2,9 +2,9 @@
 require 'picrate'
 require 'geomerative'
 
-# Original by Edward Loveall, converted to propane by Martin Prout
+# Original by Edward Loveall, converted to picrate by Martin Prout
 # Click in frame to start the line (repeat as required to generate path)
-# Makes use of propane Vec2D class
+# Makes use of picrate Vec2D class
 class GeomerativePath < Processing::App
   include_package 'geomerative'
 
