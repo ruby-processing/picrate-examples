@@ -21,7 +21,7 @@ class SubClassSketch < Processing::App
 end
 
 class Spin
-  include Propane::Proxy
+  include Processing::Proxy
   attr_accessor :x, :y, :speed
   attr_accessor :angle
 

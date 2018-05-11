@@ -10,7 +10,7 @@ class Words < Processing::App
   def setup
     sketch_title 'Words'
     @x = 30
-    Propane::PFont.list.each { |fnt| puts fnt }
+    Processing::PFont.list.each { |fnt| puts fnt }
     @font = create_font('Georgia', 24)
     text_font @font, 32
     no_loop

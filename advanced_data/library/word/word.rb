@@ -6,7 +6,7 @@
 # source and frequency
 ########
 class Word
-  include Propane::Proxy
+  include Processing::Proxy
   # Store a count for occurences in two different books
   attr_reader :count_dracula, :count_franken, :total_count
   attr_reader :word, :position, :width, :height, :speed

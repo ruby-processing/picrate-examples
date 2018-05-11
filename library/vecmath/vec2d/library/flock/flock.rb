@@ -30,8 +30,8 @@ class Boid
     @r = 2.0
     @maxspeed = 2
     @maxforce = 0.03
-    @width = Propane.app.width
-    @height = Propane.app.height
+    @width = Processing.app.width
+    @height = Processing.app.height
   end
 
   def run(boids)

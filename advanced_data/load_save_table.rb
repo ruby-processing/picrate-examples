@@ -85,7 +85,7 @@ end
 
 # Enumerable class holds bubble data
 class BubbleData
-  include Propane::Proxy
+  include Processing::Proxy
   extend Forwardable
   def_delegators(:@bubbles, :each, :<<, :size, :shift)
   include Enumerable, Runnable

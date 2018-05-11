@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 # The bubble library, include BubbleStruct
 class Bubble
-  include Propane::Proxy
+  include Processing::Proxy
 
   attr_reader :x, :y, :diameter, :name, :over
 

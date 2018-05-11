@@ -26,7 +26,7 @@ class Saturation < Processing::App
   end
 
   def settings
-    size 640, 360, FX2D
+    size 640, 360
   end
 end
 
