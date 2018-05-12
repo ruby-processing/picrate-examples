@@ -20,7 +20,7 @@ end
 
 desc 'shaders'
 task :shaders do
-  sh "cd #{PRWD}/processing_app/shaders && rake"
+  sh "cd #{PRWD}/shaders && rake"
 end
 #
 # desc 'PixelFlow'
