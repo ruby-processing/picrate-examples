@@ -8,7 +8,7 @@ class Droste < Processing::App
   attr_reader :cam, :my_filter, :origin
 
   def settings
-    size(1280, 960, P2D)
+    size(1280, 960)
   end
 
   def setup

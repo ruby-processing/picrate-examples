@@ -7,7 +7,7 @@ class SimpleCapture < Processing::App
   attr_reader :video
 
   def settings
-    size(320, 240, P2D)
+    size(320, 240)
   end
 
   def setup

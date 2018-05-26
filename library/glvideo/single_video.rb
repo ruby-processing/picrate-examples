@@ -22,7 +22,7 @@ class SingleVideo < Processing::App
   end
 
   def settings
-    size(560, 406, P2D)
+    size(560, 406)
   end
 end
 

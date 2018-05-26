@@ -13,7 +13,7 @@ class LinearImage < Processing::App
   attr_reader :signal, :img, :direction
 
   def settings
-    size(640, 360)
+    size(640, 360, P2D)
   end
 
   def setup

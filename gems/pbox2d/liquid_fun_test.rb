@@ -16,7 +16,7 @@ class LiquidFunTest < Processing::App
   attr_reader :boxes, :boundaries, :box2d
 
   def settings
-    size(640, 360, P2D)
+    size(640, 360)
   end
 
   def setup

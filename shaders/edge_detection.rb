@@ -11,7 +11,7 @@ class EdgeDetection < Processing::App
   attr_reader :img
 
   def settings
-    size(640, 360)
+    size(640, 360, P2D)
   end
 
   def setup

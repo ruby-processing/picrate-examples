@@ -28,7 +28,7 @@ class Relativity < Processing::App
   end
 
   def settings
-    size 640, 480, P2D
+    size 640, 480
   end
 end
 

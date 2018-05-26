@@ -9,7 +9,7 @@ class SimplexNoiseTest < Processing::App
   NS = 0.06 # (try from 0.005 to 0.5)
   KEYS = %w(1 2 3 4).freeze
   def settings
-    size 300, 300, P2D
+    size 300, 300
   end
 
   def setup

@@ -13,11 +13,11 @@ class Monjori < Processing::App
   # (Look for Monjori under the Plane Deformations Presets)
 
   attr_reader :monjori
-  
+
   def settings
     size(640, 360, P2D)
   end
-  
+
   def setup
     sketch_title 'Monjori'
     no_stroke

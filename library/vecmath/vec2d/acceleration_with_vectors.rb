@@ -73,7 +73,7 @@ class AccelerationWithVectors < Processing::App
   end
 
   def settings
-    size 640, 360, P2D
+    size 640, 360
   end
 end
 

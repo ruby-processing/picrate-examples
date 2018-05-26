@@ -11,7 +11,7 @@ class Landscape < Processing::App
   # Processing port by Raphaël de Courville.
   #
   attr_reader :landscape
-  java_alias :background_int, :background, [Java::int]  
+  java_alias :background_int, :background, [Java::int]
   TITLE_FORMAT = 'frame: %d - fps: %0.2f'.freeze
 
   def settings

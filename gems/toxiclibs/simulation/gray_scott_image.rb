@@ -73,7 +73,7 @@ class GrayScottToneImage < Processing::App
   end
 
   def settings
-    size(256, 256, P2D)
+    size(256, 256)
   end
 end
 

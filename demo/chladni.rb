@@ -23,7 +23,7 @@ class Chladni < Processing::App
   attr_reader :m, :n, :epsilon, :recompute
 
   def settings
-    size(500, 500, P2D)
+    size(500, 500)
   end
 
   def setup

@@ -9,7 +9,7 @@ class Steinberg < Processing::App
   attr_reader :cam, :my_shader
 
   def settings
-    size(640, 480, P2D)
+    size(640, 480)
   end
 
   def setup

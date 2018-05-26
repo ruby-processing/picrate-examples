@@ -161,7 +161,7 @@ class SeekingNeuralSketch < Processing::App
   end
 
   def settings
-    size 640, 360, P2D
+    size 640, 360
     smooth(4)
   end
 end
