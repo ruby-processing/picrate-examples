@@ -49,7 +49,7 @@ class LatLong < Processing::App
   end
 
   def settings
-    size(800, 800, P3D)
+    size(750, 750, P3D)
   end
 end
 

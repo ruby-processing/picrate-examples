@@ -18,7 +18,7 @@ class FibonacciSphere < Processing::App
   attr_reader :pts, :rotation_x, :rotation_y, :nbr_points, :radius, :add_points
 
   def settings
-    size(1024, 768, P3D)
+    size(1024, 750, P3D)
   end
 
   def setup

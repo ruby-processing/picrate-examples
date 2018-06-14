@@ -13,7 +13,7 @@ class ToxicLibsColorTheme < Processing::App
   attr_reader :show_discs
 
   def settings
-    size(1024, 768)
+    size(1024, 750)
     # smooth
   end
 

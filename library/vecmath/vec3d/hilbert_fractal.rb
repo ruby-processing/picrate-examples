@@ -41,7 +41,7 @@ class HilbertFractal < Processing::App
   end
 
   def settings
-    size 1024, 768, P3D
+    size 1024, 750, P3D
   end
 end
 

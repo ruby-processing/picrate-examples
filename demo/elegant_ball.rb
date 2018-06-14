@@ -9,7 +9,7 @@ java_import 'monkstone.vecmath.AppRender'
 class ElegantBall < Processing::App
 
   def settings
-    size(800, 800, P3D)
+    size(750, 750, P3D)
   end
 
   def setup

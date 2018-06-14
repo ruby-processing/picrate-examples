@@ -25,7 +25,7 @@ class CircumcircleSketch < Processing::App
   attr_reader :point, :font, :points, :circle, :center
 
   def settings
-    size 800, 800
+    size 750, 750
     # pixel_density(2) # for HiDpi screens
     # smooth see https://processing.org/reference/smooth_.html
   end
