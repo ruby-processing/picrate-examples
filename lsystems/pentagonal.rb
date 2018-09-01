@@ -8,7 +8,7 @@ class PentagonalFractal < Processing::App
 
 
   #  Empirically determined position adjustments
-  ADJUST = [[0, 50], [250, 500], [250, 500], [500, 280], [750, 700]]
+  ADJUST = [[0, 50], [250, 500], [250, 500], [500, 280]]
 
   attr_reader :pentagonal, :pentive
 
@@ -27,7 +27,7 @@ class PentagonalFractal < Processing::App
 
   def key_pressed
     case key
-    when '1', '2', '3', '4', '5'  # key corresponds to generation
+    when '1', '2', '3', '4' # key corresponds to generation
       gen = key.to_i
       @pentagonal = Pentagonal.new
       pentagonal.create_grammar gen
