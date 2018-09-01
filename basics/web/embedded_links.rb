@@ -25,7 +25,7 @@ class EmbeddedLinks < Processing::App
   end
 
   def mouse_pressed
-    link 'https://ruby-processing.github.io/JRubyArt/' if @over_left_button
+    link 'https://ruby-processing.github.io/PiCrate/' if @over_left_button
     link 'https://ruby-processing.github.io/' if @over_right_button
   end
 

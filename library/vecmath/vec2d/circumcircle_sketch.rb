@@ -5,12 +5,12 @@ require 'picrate'
 # Here is a sketch that clearly demonstrates some of the most egregious parts of
 # vanilla processing:-
 # PVector is over complicated and overloads 2D and 3D functionality, cf Vec2D
-# JRubyArt and picrate which behaves as a 2D vector (cross product is a float)
+# PiCrate and picrate which behaves as a 2D vector (cross product is a float)
 # and can easily be used in chain calculations.
 # The inverted Y axis in processing requires remapping to use in graphs etc.
 # The map method of processing can be used to do this remapping, however in many
 # languages (python, ruby etc) map is a keyword with alternative usage.
-# For this reason in JRubyArt and picrate we have replaced vanilla processing
+# For this reason in PiCrate and picrate we have replaced vanilla processing
 # map with map1d.
 
 ##################################################

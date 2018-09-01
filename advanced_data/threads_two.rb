@@ -26,7 +26,7 @@ class ThreadsTwo < Processing::App
   end
 
   def load_image_thread
-    thread do     # supply a block in JRubyArt rather than use reflection
+    thread do     # supply a block in PiCrate rather than use reflection
       FRAMES.times do |i|
         frames << load_image(data_path(format(IMG_F, i.to_s.rjust(3, '0'))))
         @curr = i

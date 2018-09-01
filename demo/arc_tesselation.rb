@@ -8,9 +8,10 @@ require 'picrate'
 # use 's' to save
 
 class ArcTesselation < Processing::App
-  attr_reader :cols, :coloured
+  load_library :color_group
+  attr_reader :cols, :coloured, :group
 
-  PALETTE = %w[#152A3B #158ca7 #F5C03E #D63826 #0F4155 #7ec873 #4B3331].freeze
+  PALETTE = %w[#0F4155 #158CA7 #D63826 #F5C03E #152A3B #7EC873 #4B3331].freeze
 
   def settings
     size(600, 600)
@@ -20,7 +21,9 @@ class ArcTesselation < Processing::App
     background 0
     sketch_title 'Arc Tesselation'
     # create a java primitive array of signed int
-    @cols = web_to_color_array(PALETTE)
+    #  @cols = web_to_color_array(PALETTE)
+    @group = ColorGroup.from_web_array(PALETTE)
+    @cols = group.colors
     stroke_weight 1.5
     stroke_cap SQUARE
     stroke(0, 200)
@@ -64,7 +67,9 @@ class ArcTesselation < Processing::App
   end
 
   def mouse_pressed
-    @cols = shuffle_array(cols) if coloured
+    group.shuffle! if coloured
+    @cols = group.colors
+    puts group.ruby_code # prints out current web colors as ruby code
     loop
   end
 
@@ -75,13 +80,6 @@ class ArcTesselation < Processing::App
     when 's', 'S'
       save(data_path('arc_pattern.png'))
     end
-  end
-
-  # do a ruby shuffle! on a primitive java array
-  def shuffle_array(arr)
-    cols = arr.to_a
-    cols.shuffle!
-    cols.to_java(Java::int)
   end
 end
 

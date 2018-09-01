@@ -20,7 +20,7 @@ class Steinberg < Processing::App
   end
 
   def start_capture(w, h)
-    @cam = GLCapture.new(self)
+    @cam = GLCapture.new(self, 'UVC Camera (046d:0825)', width * 2, height * 2)
     cam.start
   end
 

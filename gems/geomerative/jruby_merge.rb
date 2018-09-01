@@ -22,7 +22,7 @@
 # More info on these tutorials and workshops at :
 # www.freeartbureau.org/blog
 #
-# Adapted for JRubyArt by Martin Prout
+# Adapted for PiCrate by Martin Prout
 #######################
 require 'geomerative'
 

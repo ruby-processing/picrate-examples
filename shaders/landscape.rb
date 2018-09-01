@@ -22,7 +22,7 @@ class Landscape < Processing::App
     sketch_title 'Landscape'
     no_stroke
     # The code of this shader shows how to integrate shaders from shadertoy
-    # into Processing/JRubyArt/propane with minimal changes.
+    # into Processing/PiCrate/propane with minimal changes.
     @landscape = load_shader(data_path('landscape.glsl'))
     landscape.set('resolution', width.to_f, height.to_f)
   end

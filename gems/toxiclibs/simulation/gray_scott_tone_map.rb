@@ -13,7 +13,7 @@ require 'toxiclibs'
 # <li>press any key to reset</li>
 # </ul></p>
 #
-# Copyright (c) 2010 Karsten Schmidt, JRubyArt Version (c) 2015 Martin Prout
+# Copyright (c) 2010 Karsten Schmidt, PiCrate Version (c) 2015 Martin Prout
 
 # This demo & library is free software you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public

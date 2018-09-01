@@ -6,7 +6,7 @@
 #
 # c = cycle through the color maps
 #
-# Requires JRubyArt-1.2.5+
+# Requires PiCrate-1.2.5+
 #
 # Photographs by Folkert Gorter (@folkertgorter / http://superfamous.com/)
 # made available under a CC Attribution 3.0 license.

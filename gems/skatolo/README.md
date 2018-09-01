@@ -5,7 +5,7 @@ See repo on [github](https://github.com/Rea-lity-Tech/Skatolo) to run these exam
 
 ### About
 
-The skatolo java library was developed for an [advanced use of ControlP5](https://github.com/poqudrof/PapARt), it is not as convenient to use. It is a part of a research and development project involving multi-touch, augmented reality and Ruby. However it has also been adapted to work easily with JRubyArt (and hence picrate). The skatolo library is developed by [Jeremy Laviole](http://jeremy.laviole.name/).
+The skatolo java library was developed for an [advanced use of ControlP5](https://github.com/poqudrof/PapARt), it is not as convenient to use. It is a part of a research and development project involving multi-touch, augmented reality and Ruby. However it has also been adapted to work easily with PiCrate (and hence picrate). The skatolo library is developed by [Jeremy Laviole](http://jeremy.laviole.name/).
 
 #### Sliders
 

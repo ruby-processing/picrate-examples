@@ -4,7 +4,7 @@ require 'toxiclibs'
 require 'arcball'
 
 # A 3D Tentacle by Nikolaus Gradwohl http://www.local-guru.net
-# Adapted for JRubyArt and mesh to PShape, and mesh2 export by Martin Prout
+# Adapted for PiCrate and mesh to PShape, and mesh2 export by Martin Prout
 class Tentacle < Processing::App
 
   attr_reader :mesh, :gfx, :tentacle, :tex

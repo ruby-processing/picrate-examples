@@ -6,7 +6,7 @@ require_relative 'library/tile/tile'
 # Using a variant of the "ArrayList" recursion technique: http://natureofcode.com/book/chapter-8-fractals/chapter08_section4
 # Penrose Algorithm from: http://preshing.com/20110831/penrose-tiling-explained
 # Daniel Shiffman May 2013
-# Translated (and refactored) to JRubyArt July 2015 by Martin Prout
+# Translated (and refactored) to PiCrate July 2015 by Martin Prout
 class Penrose < Processing::App
   load_library :control_panel
   attr_reader :tris, :s, :acute

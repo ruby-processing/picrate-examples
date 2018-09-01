@@ -1,5 +1,5 @@
 # dummy_spring.rb by Martin Prout 
-# An example of duck-typing in JRubyArt
+# An example of duck-typing in PiCrate
 
 # This class avoids the tests for null of the vanilla processing version
 class DummySpring

@@ -9,7 +9,7 @@ In [german][german]
 ### Examples ###
 
 The solid_type sketch is a variant of an Amon Owed sketch requires picrate-2.0.7 (or latest github version).
-Requires [geomerative.gem][gem] and hemesh library, see [guide to install vanilla processing libraries][guide] in picrate. You need to do something similar for vanilla processing pdf library (I have copy installed for JRubyArt), there might be other ways to get it eg github, ie without requiring a full vanilla processing install.
+Requires [geomerative.gem][gem] and hemesh library, see [guide to install vanilla processing libraries][guide] in picrate. You need to do something similar for vanilla processing pdf library (I have copy installed for PiCrate), there might be other ways to get it eg github, ie without requiring a full vanilla processing install.
 
 NB: to load `ttf` also known as true type fonts you should us absolute path unless they are included in the data folder (then use `data_path` wrapper)
 

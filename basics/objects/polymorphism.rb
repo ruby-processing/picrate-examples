@@ -11,7 +11,7 @@ class Polymorphism < Processing::App
 # Example 22-2: Polymorphism
 
 # One array of Shapes, in ruby we don't need polymorphism to achieve that,
-# this is a JRubyArt port. Introducing the hook method, keyword args and the
+# this is a PiCrate port. Introducing the hook method, keyword args and the
 # post_initialization hook for flexible inheritance. Important we only
 # really need to know 'run' method. Note initialization of color can be
 # specified for Circle,defaults to color(rand(255), 100) see shapes/circle.rb.

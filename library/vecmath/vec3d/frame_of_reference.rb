@@ -9,7 +9,7 @@ class FrameOfReference < Processing::App
   ###############
   # Frame of Reference example by Ira Greenberg
   # https://github.com/irajgreenberg/ProcessingTips
-  # Translated to JRubyArt by Martin Prout February 2016
+  # Translated to PiCrate by Martin Prout February 2016
   ###############
   FACE_COUNT = 50
 
