@@ -13,11 +13,11 @@ require 'picrate'
 # jruby fire.rb
 class Fire < Processing::App
   load_library :palette
-  
+
   def settings
     size 320, 240
   end
-  
+
   def setup
     sketch_title 'Fire'
     frame_rate 30
@@ -28,12 +28,12 @@ class Fire < Processing::App
     @height = height / @scale
     @intensity = 2
   end
-  
+
   def draw
     background 0
     update_fire
   end
-  
+
   def update_fire
     random_line @height - 1
     (0..@height - 2).each do |y|
@@ -53,25 +53,25 @@ class Fire < Processing::App
       end
     end
   end
-  
+
   def fire_data(x, y)
     @fire[offset(x, y)]
   end
-  
+
   def set_fire_data(x, y, value)
     @fire[offset(x, y)] = value.to_i
   end
-  
+
   def random_offset
     rand(0..@palette.size)
   end
-  
+
   def random_line(y)
     (0...@width).each do |x|
       @fire[offset(x, y)] = random_offset
     end
   end
-  
+
   def offset(x, y)
     (y * @width) + x
   end
