@@ -2,8 +2,8 @@
 require 'picrate'
 
 class Terrain < Processing::App
-  WIDTH = 1400
-  HEIGHT = 1100
+  WIDTH = 1_400
+  HEIGHT = 1_100
   SCL = 30
   attr_reader :terrain, :rows, :columns, :mover
 
@@ -41,7 +41,7 @@ class Terrain < Processing::App
         terrain[hash_key(x, y)].to_vertex(renderer)
         terrain[hash_key(x, y.succ)].to_vertex(renderer)
       end
-      end_shape(CLOSE)
+      end_shape
     end
   end
 
