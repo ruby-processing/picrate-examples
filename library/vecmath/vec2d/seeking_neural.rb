@@ -95,7 +95,7 @@ module SeekingNeural
 
     def display
       # Draw a triangle rotated in the direction of velocity
-      theta = @velocity.heading + PI / 2
+      theta = @velocity.fast_heading + PI / 2
       fill(175)
       stroke(0)
       stroke_weight(1)
