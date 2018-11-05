@@ -1,6 +1,4 @@
 #!/usr/bin/env jruby -w
-
-
 require 'picrate'
 require 'geomerative'
 
