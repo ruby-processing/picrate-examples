@@ -23,7 +23,7 @@ class HypeProximity < Processing::App
 
   def setup
     sketch_title 'Hype Proximity'
-    group = ColorGroup.from_web_array(PALETTE)
+    group = ColorGroup.from_web_array(PALETTE.to_java(:string))
     @colors = KEY.zip(group.colors).to_h
     H.init(self)
     H.background(colors[:background])

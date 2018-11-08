@@ -21,7 +21,7 @@ end
 
 def setup
   sketch_title('HOrbiter Example')
-  group = ColorGroup.from_web_array(PALETTE)
+  group = ColorGroup.from_web_array(PALETTE.to_java(:string)
   H.init(self)
   H.background(color('#242424'))
   H.use3D(true)

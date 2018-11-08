@@ -3,7 +3,7 @@ require 'picrate'
 require 'ruby_wordcram'
 
 # Literate colors from picrate
-# uses `web_to_color_array` to create a hash of fruity colors
+# uses `from_web_array` to create a hash of fruity colors
 # to join two words as `cherry\ red` use back slash
 class Fruits < Processing::App
 
@@ -17,7 +17,7 @@ class Fruits < Processing::App
   def setup
     sketch_title 'Fruity Colors'
     background(255)
-    colors = FRUITS.zip(web_to_color_array(PALETTE)).to_h
+    colors = FRUITS.zip(from_web_array(PALETTE)).to_h
     longest = FRUITS.max { |a, b| a.length <=> b.length }
     shortest = FRUITS.min { |a, b| a.length <=> b.length }
     words = FRUITS.map do |fruit|

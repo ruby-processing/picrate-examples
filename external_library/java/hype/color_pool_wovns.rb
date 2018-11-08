@@ -2,7 +2,7 @@
 require 'picrate'
 
 # The sketch class
-class ColorPool < Processing::App
+class ColorPoolWovns < Processing::App
   load_libraries :hype, :color_group
 
   %w[H HDrawablePool HRect].freeze.each do |klass|
@@ -19,10 +19,10 @@ class ColorPool < Processing::App
   end
 
   def setup
-    sketch_title 'Color Pool'
+    sketch_title 'Color Pool Wovns'
     H.init(self)
     H.background(color('#242424'))
-    group = ColorGroup.from_web_array(PALETTE)
+    group = ColorGroup.from_web_array(PALETTE.to_java(:string))
     colors = HColorPool.new(group.colors)
     pool = HDrawablePool.new(15_876)
     pool.auto_add_to_stage
@@ -38,4 +38,4 @@ class ColorPool < Processing::App
   end
 end
 
-ColorPool.new
+ColorPoolWovns.new

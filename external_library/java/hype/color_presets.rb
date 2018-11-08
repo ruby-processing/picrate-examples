@@ -4,7 +4,6 @@ require 'picrate'
 # The sketch class
 class ColorPresets < Processing::App
   load_libraries :hype, :color_group
-  load_library :hype
   %w[H HRect HDrawablePool].freeze.each do |klass|
     java_import "hype.#{klass}"
   end

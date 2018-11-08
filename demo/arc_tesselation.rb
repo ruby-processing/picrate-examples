@@ -21,8 +21,8 @@ class ArcTesselation < Processing::App
     background 0
     sketch_title 'Arc Tesselation'
     # create a java primitive array of signed int
-    #  @cols = web_to_color_array(PALETTE)
-    @group = ColorGroup.from_web_array(PALETTE)
+    #  @cols = from_web_array(PALETTE)
+    @group = ColorGroup.from_web_array(PALETTE.to_java(:string)
     @cols = group.colors
     stroke_weight 1.5
     stroke_cap SQUARE

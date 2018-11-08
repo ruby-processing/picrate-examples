@@ -24,7 +24,7 @@ def setup
   sketch_title('Tween Example')
   H.init(self)
   H.background(color('#000000'))
-  group = ColorGroup.from_web_array(PALETTE)
+  group = ColorGroup.from_web_array(PALETTE.to_java(:string))
   colors = HColorPool.new(group.colors)
   canvas = HCanvas.new
   H.add(canvas).autoClear(false).fade(1)

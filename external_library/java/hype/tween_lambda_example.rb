@@ -24,8 +24,8 @@ class TweenExample < Processing::App
     sketch_title('Lambda Tween Example')
     H.init(self)
     H.background(color('#000000'))
-    group = ColorGroup.from_web_array(PALETTE)
-    colors = HColorPool.new(group.colors)
+    color_group = ColorGroup.from_web_array(PALETTE.to_java(:string)
+    colors = HColorPool.new(color_group.colors)
     H.add(@canvas = HCanvas.new).autoClear(false).fade(1)
     tween_trigger = HRandomTrigger.new(1.0 / 6)
     tween_trigger.callback do

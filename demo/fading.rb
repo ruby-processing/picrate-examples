@@ -10,7 +10,7 @@ class Fading < Processing::App
 
   def setup
     sketch_title 'Fading Arcs'
-    @group = ColorGroup.from_web_array(PALETTE)
+    @group = ColorGroup.from_web_array(PALETTE.to_java(:string)
     colors = group.colors
     background(group.last)
     no_stroke

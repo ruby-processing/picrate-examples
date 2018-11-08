@@ -18,7 +18,7 @@ class RotateGears < Processing::App
   def setup
     sketch_title 'HRotate Gears'
     H.init(self)
-    color_group = ColorGroup.from_web_array(PALETTE)
+    color_group = ColorGroup.from_web_array(PALETTE.to_java(:string))
     @colors = color_group.colors
     H.background(colors[0])
     svg1 = HShape.new(data_path('cog_sm.svg'))

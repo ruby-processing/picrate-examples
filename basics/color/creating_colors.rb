@@ -15,7 +15,7 @@ class CreatingColors < Processing::App
 
   def setup
     sketch_title 'Homage to Albers'
-    palette = web_to_color_array(WEB)
+    palette = from_web_array(WEB)
     @redder = palette[0]
     @yellower = palette[1]
     @orangish = palette[2]
