@@ -1,6 +1,13 @@
-# encoding: utf-8
-load_library :hype
-include_package 'hype'
+#!/usr/bin/env jruby
+require 'picrate'
+
+# The sketch class
+class MethodChaining < Processing::App
+
+  load_library :hype
+  %w[H HRect].freeze.each do |klass|
+    java_import "hype.#{klass}"
+  end
 
 def settings
   size(640, 640)
@@ -54,3 +61,6 @@ def setup
   stroke(color('#0095a8'))
   line(0, height / 2, width, height / 2)
 end
+end
+
+MethodChaining.new
