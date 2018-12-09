@@ -41,8 +41,8 @@ class HypeSwarm < Processing::App
     .add(HRect.new(10).rounding(5))
     .on_create do |obj|
       obj.stroke_weight(2)
-      .stroke(colors2[1])
-      .fill(colors2[2])
+      .stroke(colors2[2])
+      .fill(colors2[1])
       .loc(rand(100..540), rand(100..540))
       .anchor_at(H::CENTER)
       .rotation(45)
@@ -79,11 +79,10 @@ class HypeSwarm < Processing::App
     end
     H.draw_stage
     it = swarm.goals.iterator
-    while it.has_next
+    while it.has_next?
       it.remove
-      it.next
+      # it.next
     end
-
     pool.each do |d|
       swarm.add_goal(d.x, d.y)
     end

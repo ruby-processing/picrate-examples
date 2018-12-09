@@ -21,8 +21,7 @@ class ElegantBall < Processing::App
     background(0)
     # Move the origin so that the scene is centered on the screen.
     translate(width / 2, height / 2, 0.0)
-    # Set up the lighting.
-    setup_lights
+    lights # Simple lighting for PiCrate.
     # Rotate the local coordinate system.
     smooth_rotation(5.0, 6.7, 7.3)
     # Draw the inner object.
@@ -39,12 +38,6 @@ class ElegantBall < Processing::App
 
   def renderer
     @renderer ||= AppRender.new(self)
-  end
-
-  def setup_lights
-    ambient_light(0.025, 0.025, 0.025)
-    directional_light(0.2, 0.2, 0.2, -1, -1, -1)
-    spot_light(1.0, 1.0, 1.0, -200, 0, 300, 1, 0, -1, Math::PI / 4, 20)
   end
 
   # Generate a vector whose components change smoothly over time in the range
