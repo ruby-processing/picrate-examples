@@ -1,20 +1,17 @@
 #!/usr/bin/env jruby
 require 'picrate'
-require 'toxiclibs'
 
 # Simple recursive branching system inspired by mycelium growth
-#
+# After an original by Karsten Schmidt
 # The vanilla processing sketch was part of the SAC 2013 workshop project
-# (c) 2013 Karsten Schmidt
-# LGPLv3 licensed
 # translated to PiCrate by Martin Prout 2018
 class Mycelium < Processing::App
   load_library :branch
 
-  attr_reader :gfx, :root
+  attr_reader :renderer, :root
 
   def setup
-    @gfx = Gfx::ToxiclibsSupport.new(self)
+    @renderer = AppRender.new(self)
     @root = Branch.new(
       self,
       Vec2D.new(0, height / 2),
@@ -25,8 +22,6 @@ class Mycelium < Processing::App
 
   def draw
     background(0)
-    stroke(255)
-    no_fill
     root.run
   end
 
