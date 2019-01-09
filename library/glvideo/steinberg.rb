@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Because this sketch uses a glsl shader it needs to run using
 # jruby-complete (typically rp5 --nojruby sketch.rb)

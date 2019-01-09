@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Reflection
 # by Simon Greenwold.

@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Mandelbrot Set example
 # by Jordan Scales (http://jordanscales.com)

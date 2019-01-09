@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 # coding: utf-8
 require 'picrate'
 require 'toxiclibs'

@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 # frozen_string_literal: true
 require 'picrate'
 # Boolean data is one bit of information. True or false.

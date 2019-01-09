@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # sketch by Jan Vantomme
 # Part of a series of articles on Processing 2.

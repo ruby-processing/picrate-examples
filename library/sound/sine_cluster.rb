@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 
 # This example shows how to create a cluster of sine oscillators, change the

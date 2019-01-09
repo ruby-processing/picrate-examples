@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # The basic shape primitive functions are triangle, rect,
 # quad, and ellipse. Squares are made with rect and circles

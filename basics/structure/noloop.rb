@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 
 class Noloop < Processing::App

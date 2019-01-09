@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # The beginShape() function begins recording vertices
 # for a shape and endShape() stops recording.

@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Simple 3D Bird
 # by Ira Greenberg.

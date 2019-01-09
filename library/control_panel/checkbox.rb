@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -w
 require 'picrate'
 class Checkbox < Processing::App
   load_library :control_panel

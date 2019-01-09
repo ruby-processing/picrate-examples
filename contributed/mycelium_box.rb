@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 require 'arcball'
 # Simple recursive branching system inspired by mycelium growth

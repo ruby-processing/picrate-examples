@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -w
 # After Gravity by Christian Hahn
 # mouse click on window
 require 'picrate'

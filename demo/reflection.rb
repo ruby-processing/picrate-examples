@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Taken from the Processing Examples.
 class Reflection < Processing::App

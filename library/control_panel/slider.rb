@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -w
 require 'picrate'
 class SimpleSlider < Processing::App
   load_library :control_panel

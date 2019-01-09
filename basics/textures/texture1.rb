@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 require 'arcball'
 # Texture 1.

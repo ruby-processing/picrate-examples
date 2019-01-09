@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # An image is recreated from its individual component colors.
 # The many colors of the image are created through modulating the

@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -w
 require 'picrate'
 require 'arcball'
 ########################################################

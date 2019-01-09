@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 require 'ruby_wordcram'
 # US Constitution text from http://www.usconstitution.net/const.txt

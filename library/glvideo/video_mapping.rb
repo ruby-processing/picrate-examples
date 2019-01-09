@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # The sketch class
 class VideoMapping < Processing::App

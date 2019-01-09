@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -W2
 require 'picrate'
 # raining after Rain1 by Thomas R. 'TomK32' Koll
 #

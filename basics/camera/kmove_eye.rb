@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -W2
 require 'picrate'
 # Move Eye.
 # by Simon Greenwold.

@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Displays 4 sketchy rectangles with different hachuring styles.
 # Version for propane by Martin Prout

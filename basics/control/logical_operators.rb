@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # The logical operators for AND (&&) and OR (||) are used to
 # combine simple relational statements into more complex expressions.

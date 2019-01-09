@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -W2
 # frozen_string_literal: true
 # Adapted to use Processing Vec2D and Vec3D classes by Martin Prout
 

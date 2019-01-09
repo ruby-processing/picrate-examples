@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 
 class WidthHeight < Processing::App

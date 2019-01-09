@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Iteration in Ruby differs from that in Processing / Java.
 # Where you'd mainly use for- and while constructs in the later

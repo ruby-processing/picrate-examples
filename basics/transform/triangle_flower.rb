@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Triangle Flower
 # by Ira Greenberg.

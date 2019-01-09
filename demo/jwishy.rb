@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -W2
 # frozen_string_literal: true
 require 'picrate'
 # Iconic ruby-processing example for Processing

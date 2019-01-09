@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # We extend the language of conditionals by adding the
 # keyword "elsif". This allows conditionals to ask

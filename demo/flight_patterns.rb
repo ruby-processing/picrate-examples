@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -w
 # Description:
 # Flight Patterns is that ol' Euruko 2008 demo.
 # Reworked version for Processing

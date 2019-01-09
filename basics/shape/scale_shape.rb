@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -W2
 require 'picrate'
 # Scale Shape.
 # Illustration by George Brower.

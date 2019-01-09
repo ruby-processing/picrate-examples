@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 # Creating threaded instance of Hooky maty not be mush use because we create a
 # global Processing.app
 require_relative 'lib/hooky_instance'

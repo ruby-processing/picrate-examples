@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 require 'skatolo'
 # In this simple sketch we attach three sliders to skatolo in the regular way,

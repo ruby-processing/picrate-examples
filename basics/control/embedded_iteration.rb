@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Embedding "for" structures allows repetition in two dimensions.
 class Embeded < Processing::App

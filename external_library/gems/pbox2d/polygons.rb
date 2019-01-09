@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -W2
 require 'picrate'
 require 'pbox2d'
 require_relative 'lib/custom_shape'

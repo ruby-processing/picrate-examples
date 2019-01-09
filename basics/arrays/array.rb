@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # An array is a list of data. Each piece of data in an array
 # is identified by an index number representing its position in

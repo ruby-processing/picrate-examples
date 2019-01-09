@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 
 # hold down mouse to see unfiltered output

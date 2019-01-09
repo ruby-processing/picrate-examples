@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Shape Transform
 # by Ira Greenberg.

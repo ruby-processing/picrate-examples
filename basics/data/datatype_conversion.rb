@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Processings datatype conversion functions make no sense for Ruby as it does
 # not have primitive datatypes. Try these instead:

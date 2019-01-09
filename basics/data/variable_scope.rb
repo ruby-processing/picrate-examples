@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Variables may either have a global or local "scope".
 # For example, variables declared within either the

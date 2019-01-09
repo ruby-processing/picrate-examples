@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 
 # This is a simple white noise generator. It can be started with .play(amp).

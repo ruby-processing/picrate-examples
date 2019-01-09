@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 
 # This example shows how to make a simple sampler and sequencer with the Sound

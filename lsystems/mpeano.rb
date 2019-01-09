@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -w
 require 'picrate'
 ########################################################
 # A MPeano fractal implemented using a

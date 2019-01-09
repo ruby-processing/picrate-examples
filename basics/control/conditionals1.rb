@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Conditions are like questions.
 # They allow a program to decide to take one action if

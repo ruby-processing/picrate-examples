@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -w
 require 'picrate'
 # Regular Expression example
 # by Martin Prout.

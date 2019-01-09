@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 require_relative 'shapes/square'
 require_relative 'shapes/circle.rb'

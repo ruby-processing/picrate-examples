@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -w
 # frozen_literal: true
 require 'picrate'
 require 'geomerative'

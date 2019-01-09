@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -w
 require 'picrate'
 require 'csv'
 # Loading Tabular Data

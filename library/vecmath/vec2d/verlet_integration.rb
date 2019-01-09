@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -W2
 # frozen_string_literal: true
 #
 # Verlet Integration - ragdoll chain

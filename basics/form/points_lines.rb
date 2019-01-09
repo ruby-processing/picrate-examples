@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Constructing a simple dimensional form with lines and rectangles.
 # Changing the value of the variable 'd' scales the image.

@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 #-------------------------------------------------------------
 # Display endless moving background using a tile texture.

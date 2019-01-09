@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Settings, Setup and Draw.
 # The settings() function is where you set size and drawing mode

@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 require 'ruby_wordcram'
 # How to make a wordcram that pops up extra information

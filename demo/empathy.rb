@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -W2
 # Empathy
 # original by Kyle McDonald
 # http://www.openprocessing.org/visuals/?visualID=1182

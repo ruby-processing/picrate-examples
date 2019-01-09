@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 require 'forwardable'
 # Ruby modules, are another way of extending a classes behaviour, the class

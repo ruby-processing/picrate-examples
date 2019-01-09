@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -w
 require 'picrate'
 #######################################################
 # penrose tiling in ruby processing using LSystems

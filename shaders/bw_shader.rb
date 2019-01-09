@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -W2
 require 'picrate'
 
 class BwShader < Processing::App

@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 require_relative 'lib/icosahedron'
 

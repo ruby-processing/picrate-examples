@@ -5,7 +5,6 @@
 #
 # WARNING: Mesh creation may take a while.
 # load gem and import the required library
-#!/usr/bin/env jruby -w
 require 'arcball'
 require 'picrate'
 require 'geomerative' # for text manipulation and point extraction

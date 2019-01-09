@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -w
 require 'picrate'
 # This sketch will load data from all of these URLs in a separate thread
 

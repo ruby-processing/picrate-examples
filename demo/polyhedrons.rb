@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -W2
 ###
 # Polyhedrons after sketch by Chinchbug on openprocessing.org
 ###

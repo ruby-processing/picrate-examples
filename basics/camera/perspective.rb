@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -W2
 require 'picrate'
 # Move the mouse left and right to change the field of view (fov).
 # Click to modify the aspect ratio. The perspective method

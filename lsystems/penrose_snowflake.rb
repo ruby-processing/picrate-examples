@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -w
 require 'picrate'
 # Lindenmayer System in PiCrate by Martin Prout
 class Snowflake < Processing::App

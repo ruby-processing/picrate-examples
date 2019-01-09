@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Bezier Ellipse
 # By Ira Greenberg

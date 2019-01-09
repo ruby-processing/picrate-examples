@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -w
 # fractions.rb, by Martin Prout
 require 'picrate'
 

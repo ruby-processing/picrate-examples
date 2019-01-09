@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # The first two parameters for the bezier function specify the
 # first point in the curve and the last two parameters specify

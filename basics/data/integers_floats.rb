@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Integers and floats are two different kinds of numerical data.
 # An integer (more commonly called an int) is a number without

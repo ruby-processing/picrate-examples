@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -w
 require 'picrate'
 # Sprite (Teddy)
 # by James Patterson.

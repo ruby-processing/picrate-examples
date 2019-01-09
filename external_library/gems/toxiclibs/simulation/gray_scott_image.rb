@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 require 'toxiclibs'
 # <p>GrayScottImage uses the seedImage() method to use a bitmap as simulation seed.

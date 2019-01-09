@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -w
 require 'picrate'
 # Loads a "mask" for an image to specify the transparency
 # in different parts of the image. The two images are blended

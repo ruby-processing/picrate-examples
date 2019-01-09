@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -w
 require 'picrate'
 ##################
 # From an original sketch on openprocessing by Chinchbug

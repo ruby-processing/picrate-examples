@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 require 'ruby_wordcram'
 # This sketch shows how to make a WordCram from any webpage.

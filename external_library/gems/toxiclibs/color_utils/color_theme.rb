@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 require 'toxiclibs'
 # Demo of small part of toxiclibs color utils

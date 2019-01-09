@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Saturation is the strength or purity of the color and represents the
 # amount of gray in proportion to the hue. A "saturated" color is pure

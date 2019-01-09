@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -w
 require 'picrate'
 # After a HashMap example
 # by Daniel Shiffman.

@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 # frozen_string_literal: true
 require 'picrate'
 # example of processing blend_color (uses PImage blend_color under the hood)

@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Drawolver: draw 2D & revolve 3D
 

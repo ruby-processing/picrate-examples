@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -W2
 require 'picrate'
 require 'arcball'
 # Move the mouse left and right to change the field of view (fov).

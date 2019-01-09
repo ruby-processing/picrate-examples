@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Demonstrates the use of :grid to create a two-dimensional (2D) array in ruby
 # Values in a 2D array are accessed through two index values.

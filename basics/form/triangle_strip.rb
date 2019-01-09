@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # TRIANGLE_STRIP Mode
 # by Ira Greenberg.

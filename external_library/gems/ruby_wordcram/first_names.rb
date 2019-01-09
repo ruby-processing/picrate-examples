@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 require 'ruby_wordcram'
 # the 1990 US Census.  Predictably, males are blue, and females

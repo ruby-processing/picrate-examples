@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Displays 4 sets of sketchy rectangles each with their own preset styles.
 # Version 2.0, 4th April, 2016

@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 # Hooky class demonstrates how to use the post_initialize hook with java
 # thread
 require 'picrate'

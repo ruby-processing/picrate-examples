@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -w
 require 'picrate'
 
 Move the pointer left and right across the image to change

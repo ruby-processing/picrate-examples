@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Scale
 # by Denis Grutze.

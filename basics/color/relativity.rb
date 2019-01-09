@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Each color is perceived in relation to other colors.
 # The top and bottom bars each contain the same component colors,

@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Pie Chart
 # By Ira Greenberg

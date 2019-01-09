@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 # A simple demonstration of vanilla processing 'reflection' methods using
 # picrate :library_proxy.
 # See library/my_library/my_library.rb code for the guts.

@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -w
 require 'picrate'
 # The createImage() function provides a fresh buffer of pixels to play with.
 # This example creates an image gradient.

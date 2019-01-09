@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # After a processing.rb example by kitao.
 class HandyBallCollision < Processing::App

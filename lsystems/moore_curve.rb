@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -w
 require 'picrate'
 ########################################################
 # A Moore Curve fractal implemented using a

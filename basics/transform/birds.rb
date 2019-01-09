@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 require_relative 'lib/bird.rb'
 # Crazy Flocking 3D Birds

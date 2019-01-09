@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 # frozen_string_literal: true
 require 'picrate'
 # Simple Radial Gradient

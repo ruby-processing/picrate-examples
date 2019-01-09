@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -W2
 require 'picrate'
 # Ignore Styles.
 # Illustration by George Brower.

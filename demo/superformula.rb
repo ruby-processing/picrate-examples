@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 # Visualize: Superformula
 # from Form+Code in Design, Art, and Architecture

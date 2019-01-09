@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 # Hooky class demonstrates how to use the post_initialize hook, creating three
 # sketches on a single thread in propane
 require 'picrate'

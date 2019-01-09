@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -w
 require 'picrate'
 # Lindenmayer System in ruby-procesDegLut.sing by Martin Prout
 # snake_kolam.rb uDegLut.sing l-systems

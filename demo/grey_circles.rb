@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -w
 # frozen_string_literal: true
 # grey circles : borrowed from https://github.com/quil/quil
 require 'picrate'

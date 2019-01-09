@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 require 'parallel'
 # An array is a list of data. Each piece of data in an array

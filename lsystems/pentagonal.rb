@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -v -w
 require 'picrate'
 ############################
 # pentagonal.rb here I roll one of my own

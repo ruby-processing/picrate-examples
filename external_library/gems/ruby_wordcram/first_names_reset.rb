@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby
 require 'picrate'
 require 'ruby_wordcram'
 # firstnames is a WordCram of the most popular first names from

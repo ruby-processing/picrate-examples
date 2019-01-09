@@ -1,4 +1,3 @@
-#!/usr/bin/env jruby -w
 require 'picrate'
 # This example presents the fastest way to load a background image
 # into Processing. To load an image as the background, it must be
