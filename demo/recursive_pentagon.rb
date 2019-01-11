@@ -1,16 +1,23 @@
-require 'picrate'# After an openprocessing sketch by C.Andrews
-class RecursivePentagons < Processing::App
-  attr_reader :strut_factor, :renderer
+# frozen_string_literal: true
 
+require 'picrate'
+
+# After an openprocessing sketch by C.Andrews
+class RecursivePentagons < Processing::App
+  load_library :color_group
+  attr_reader :strut_factor, :renderer, :cols
+  PALETTE = %w[#fff0a5 #ffd500 #594a00 #9999ff #000059].freeze
   def setup
     sketch_title 'Recursive Pentagons'
     @strut_factor = 0.2
     @renderer = AppRender.new self # so we can send Vec2D :to_vertex
-    background(255)
+    group = ColorGroup.from_web_array(PALETTE.to_java(:string))
+    @cols = group.colors
     no_loop
   end
 
   def draw
+    background 0
     translate(width / 2, height / 2)
     angle = TWO_PI / 5
     radius = width / 2
@@ -28,13 +35,13 @@ class RecursivePentagons < Processing::App
   end
 end
 
-RecursivePentagon.new
+RecursivePentagons.new
 
 # Here we include Processing::Proxy to mimic vanilla processing inner class
 # access.
 class Pentagon
   include Processing::Proxy
-  attr_reader :points ,:branches, :level, :midpoints, :innerpoints
+  attr_reader :points, :branches, :level, :midpoints, :innerpoints
 
   def initialize(points, levels)
     @points = points
@@ -66,25 +73,27 @@ class Pentagon
     # add the final innermost pentagon
     branches << Pentagon.new(innerpoints, level - 1)
   end
+
   # This is a simple helper function that takes in two points (as Vec2D) and
   # returns the midpoint between them as Vec2D.
   def midpoint(point1, point2)
     (point2 + point1) * 0.5
   end
+
   # This draws the fractal. If this is on level 0, we just draw the
   # pentagon formed by the points. When not level 0, iterate through the
   # six branches and tell them to draw themselves.
   def draw
-    if level.zero?
-      no_fill
-      begin_shape
-      points.each do |point|
-        point.to_vertex(renderer)
-      end
-      points[0].to_vertex(renderer)
-      end_shape
-    else
-      branches.each(&:draw)
+    no_fill
+    begin_shape
+    stroke_weight level
+    stroke cols[level]
+    points.each do |point|
+      point.to_vertex(renderer)
     end
+    end_shape CLOSE
+    return if level.zero?
+
+    branches.each(&:draw)
   end
 end
