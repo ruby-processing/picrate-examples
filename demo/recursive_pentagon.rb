@@ -17,7 +17,7 @@ class RecursivePentagons < Processing::App
   end
 
   def draw
-    background 0
+    background cols.last
     translate(width / 2, height / 2)
     angle = TWO_PI / 5
     radius = width / 2
