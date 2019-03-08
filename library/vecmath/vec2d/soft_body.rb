@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 require 'picrate'
-java_import 'monkstone.vecmath.AppRender'
+java_import 'monkstone.vecmath.GfxRender'
 ########
 # Soft Body by Ira Greenberg
 # Softbody dynamic simulation using curve_vertex
@@ -40,7 +40,7 @@ class SoftBody < Processing::App
   end
 
   def renderer
-    @renderer ||= AppRender.new(self)
+    @renderer ||= GfxRender.new(self.g)
   end
 
   def draw_shape

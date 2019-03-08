@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'picrate'
 
-java_import 'monkstone.vecmath.AppRender'
+java_import 'monkstone.vecmath.GfxRender'
 # Morph.
 #
 # Changing one shape into another by interpolating
@@ -77,7 +77,7 @@ class Morph < Processing::App
   end
 
   def renderer
-    @renderer = AppRender.new(self)
+    @renderer = GfxRender.new(self.g)
   end
 
   def settings

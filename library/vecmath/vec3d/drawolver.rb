@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 require 'picrate'
-java_import 'monkstone.vecmath.AppRender'
+java_import 'monkstone.vecmath.GfxRender'
 # Drawolver: draw 2D & revolve 3D
 
-# Example shows how to use the vecmath library, including AppRender utility.
+# Example shows how to use the vecmath library, including GfxRender utility.
 # On the ruby side features the use each_cons, a possibly a rare use for this
 # ruby Enumerable method?
 # 2010-03-22 - fjenett (somewhat revised by Martin Prout 2014-07-06)
@@ -47,7 +47,7 @@ class Drawolver < Processing::App
   end
 
   def renderer
-    @renderer ||= AppRender.new(self)
+    @renderer ||= GfxRender.new(self.g)
   end
 
   def reset_scene

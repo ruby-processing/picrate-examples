@@ -83,9 +83,9 @@ class Doodle < Processing::App
     @q = b
   end
 
-  # An example of AppRenderer usage for Vec3D => vertex conversion
+  # An example of GfxRenderer usage for Vec3D => vertex conversion
   def renderer
-    @renderer ||= Processing::Render::AppRender.new(self)
+    @renderer ||= Processing::Render::GfxRender.new(self.g)
   end
 end
 

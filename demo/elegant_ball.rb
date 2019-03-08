@@ -3,7 +3,7 @@ require 'picrate'
 # Ben Notorianni aka lazydog
 #
 # elegant.rb
-java_import 'monkstone.vecmath.AppRender'
+java_import 'monkstone.vecmath.GfxRender'
 
 class ElegantBall < Processing::App
 
@@ -36,7 +36,7 @@ class ElegantBall < Processing::App
   end
 
   def renderer
-    @renderer ||= AppRender.new(self)
+    @renderer ||= GfxRender.new(self.g)
   end
 
   # Generate a vector whose components change smoothly over time in the range

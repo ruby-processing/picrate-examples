@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 require 'picrate'
-java_import 'monkstone.vecmath.AppRender'
+java_import 'monkstone.vecmath.GfxRender'
 # Click on the box and drag it across the screen.
 class AaBbExample < Processing::App
   attr_reader :block, :block_locked, :over_block, :bounds
@@ -38,7 +38,7 @@ class AaBbExample < Processing::App
   end
 
   def renderer
-    @renderer ||= AppRender.new(self)
+    @renderer ||= GfxRender.new(self.g)
   end
 
   def block_locked?

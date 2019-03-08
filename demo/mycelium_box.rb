@@ -12,7 +12,7 @@ class MyceliumBox < Processing::App
   def setup
     sketch_title 'Mycelium Box'
     Processing::ArcBall.init self
-    @renderer = AppRender.new(self)
+    @renderer = GfxRender.new(self.g)
     @root = Branch.new(
       self,
       Vec3D.new(0, 10, 10),

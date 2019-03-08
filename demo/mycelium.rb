@@ -10,7 +10,7 @@ class Mycelium < Processing::App
   attr_reader :renderer, :root
 
   def setup
-    @renderer = AppRender.new(self)
+    @renderer = GfxRender.new(self.g)
     @root = Branch.new(
       self,
       Vec2D.new(0, height / 2),
