@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'picrate'
 
 # After an openprocessing sketch by C.Andrews
@@ -10,7 +8,7 @@ class RecursivePentagons < Processing::App
   def setup
     sketch_title 'Recursive Pentagons'
     @strut_factor = 0.2
-    @renderer = GfxRender.new self # so we can send Vec2D :to_vertex
+    @renderer = GfxRender.new g # so we can send Vec2D :to_vertex
     group = ColorGroup.from_web_array(PALETTE.to_java(:string))
     @cols = group.colors
     no_loop
