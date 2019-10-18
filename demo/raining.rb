@@ -27,7 +27,7 @@ class Raining < Processing::App
     @weight = 20
     @drops = RainDrops.new width, height
     @paused = false
-    font = create_font('Georgia', 15)
+    font = create_font('DejaVu Serif', 15)
     text_font(font)
   end
 

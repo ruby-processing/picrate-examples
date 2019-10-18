@@ -32,7 +32,7 @@ class CircumcircleSketch < Processing::App
   def setup
     sketch_title 'Circumcircle Through Three Points'
     @point = MathPoint.new
-    @font = create_font('Arial', 16, true)
+    @font = create_font('Liberation Sans', 16, true)
     @points = TPoints.new
     ellipse_mode RADIUS
     @renderer = GfxRender.new(self.g)

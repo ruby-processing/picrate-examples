@@ -11,9 +11,9 @@ class NOAAWeather < Processing::App
   NOAA = 'KMIA' # NOAA Weather Miami Airport
   def setup
     sketch_title "NOAA's National Weather Service"
-    #    font = create_font('Times Roman', 26)
+    font = create_font('DejaVu Sans', 26)
     # font = create_font('Merriweather-Light.ttf', 28)
-    #    text_font(font)
+    text_font(font)
     # The URL for the XML document
 
     fo = "https://w1.weather.gov/xml/current_obs/display.php?stid=%s"

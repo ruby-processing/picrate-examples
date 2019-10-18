@@ -31,7 +31,7 @@ class CountingWords < Processing::App
     # Open a file, read its contents, and 'scan' for words using a regex.
     # Include words with apostrophe eg Harker's
     @tokens = File.read(data_path('dracula.txt')).scan(/[\w'-]+/)
-    text_font(create_font('Georgia', 24))
+    text_font(create_font('DejaVu Serif', 24))
   end
 
   def draw

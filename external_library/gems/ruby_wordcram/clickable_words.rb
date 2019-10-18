@@ -26,7 +26,7 @@ class ClickableWords < Processing::App
     # Save the image of the wordcram
     @cached_image = get
     # Set up styles for when we draw stuff to the screen (later)
-    text_font(create_font('sans', 150))
+    text_font(create_font('DejaVu Sans', 150))
     text_align(CENTER, CENTER)
     @last_clicked_word = nil
   end

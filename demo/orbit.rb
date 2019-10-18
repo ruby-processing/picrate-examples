@@ -11,7 +11,7 @@ class Orbit < Processing::App
     sketch_title 'Orbit'
     frame_rate 30
     fill 0
-    @d_font = create_font('Helvetica', 40)
+    @d_font = create_font('Liberation Sans', 40)
   end
 
   def draw

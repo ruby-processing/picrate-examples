@@ -10,7 +10,7 @@ class CSTestSketch < Processing::App
     sketch_title 'Context Sensitive Test'
     background 0
     fill(200, 200, 0)
-    f = create_font('Arial', 16, true)
+    f = create_font('Liberation Sans', 16, true)
     text_font(f)
     no_loop
   end

@@ -22,7 +22,7 @@ class CharactersStrings < Processing::App
     sketch_title 'Characters Strings'
     @words = "Begin..."
     # Create the font
-    text_font create_font("Georgia", 36)
+    text_font create_font('DejaVu Serif', 36)
   end
 
   def draw

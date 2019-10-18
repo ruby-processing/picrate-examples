@@ -13,7 +13,7 @@ class RegexSketch < Processing::App
     # Load the links
     @links = load_links(url)
     links.uniq! # get rid of the duplicates
-    text_font(create_font('Georgia', 16))
+    text_font(create_font('DejaVu Serif', 16))
   end
 
   def draw

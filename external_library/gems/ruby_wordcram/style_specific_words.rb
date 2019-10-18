@@ -31,7 +31,7 @@ class StyleSpecific < Processing::App
     z = alphabet[25]
     z.set_color(color('#0000FF'))
      .set_angle(-20.radians)
-     .set_font(create_font('Georgia', 1))
+     .set_font(create_font('DejaVu Serif', 1))
      .set_place(180, 40)
      .set_size(130)
     WordCram.new(self)
