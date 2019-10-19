@@ -6,7 +6,7 @@ class FractionSums < Processing::App
 
   def setup
     sketch_title 'Math Blackboard'
-    @f = createFont('Arial', 24, true)
+    @f = create_font('Liberation Sans', 24, true)
     half = 1 / 2r     # since ruby 2.1.0 (and jruby-9.0.0.0)
     third = 1 / 3r
     quarter = 1 / 4r

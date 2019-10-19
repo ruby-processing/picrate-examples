@@ -33,7 +33,7 @@ class WordFrequency < Processing::App
     load_file(DRACULA)
     load_file(FRANKENSTEIN)
     # Create the font
-    text_font(create_font('Georgia', 24))
+    text_font(create_font('DejaVu Serif', 24))
   end
 
   def draw

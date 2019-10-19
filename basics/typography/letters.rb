@@ -15,7 +15,7 @@ class Letters < Processing::App
 
   def setup
     sketch_title 'Letters'
-    @font = create_font 'Georgia', 24
+    @font = create_font 'DejaVu Serif', 24
     text_font @font
     text_align CENTER, CENTER
   end

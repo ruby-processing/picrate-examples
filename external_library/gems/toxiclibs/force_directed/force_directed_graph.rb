@@ -29,7 +29,7 @@ class ForceDirected < Processing::App
 
   def setup
     sketch_title 'Force Directed Graph'
-    @f = create_font('Georgia', 12, true)
+    @f = create_font('DejaVu Serif', 12, true)
     @show_physics = true
     @show_particles = true
     # Initialize the physics
