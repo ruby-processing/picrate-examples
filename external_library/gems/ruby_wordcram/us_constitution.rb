@@ -14,7 +14,7 @@ class USConstitution < Processing::App
   def init_wordcram
     @wc = WordCram.new(self)
               .from_text_file(data_path('usconst.txt'))
-              .with_font(create_font(data_path('LiberationSerif-Regular.ttf'), 1))
+              .with_font(create_font('Liberation Serif', 1))
               .with_colors(color(0, 250, 200), color(30), color(170, 230, 200))
               .sized_by_weight(10, 90)
   end

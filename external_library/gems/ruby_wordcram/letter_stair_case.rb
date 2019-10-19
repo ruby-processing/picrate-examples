@@ -12,6 +12,7 @@ class LetterStairCase < Processing::App
     background 255
     fill 0
     WordCram.new(self)
+    .with_font('DejaVu Sans') # avoids missing 'sans font' warning
     .from_words(load_letters.to_java(Word))
     .angled_at(0)
     .min_shape_size(0) # Make sure "I" always shows up.

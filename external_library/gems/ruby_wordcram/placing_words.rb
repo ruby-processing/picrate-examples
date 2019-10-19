@@ -1,3 +1,6 @@
+
+#!/usr/bin/env jruby
+
 require 'picrate'
 require 'ruby_wordcram'
 
@@ -22,8 +25,10 @@ class PlacingWords < Processing::App
     # there. Also, most placers take the screen width &
     # height into account, so those can affect the
     # outcome.
+    # font = create_font('DejaVu Sans', 1)
     WordCram.new(self)
             .from_text_file(data_path('kari-the-elephant.txt'))
+            .with_font('DejaVu Sans')
             .draw_all
     # Alternative Placers to try out before draw_all
     #       .with_placer(Placers.center_clump)
@@ -38,4 +43,4 @@ class PlacingWords < Processing::App
   end
 end
 
-PlacingWords .new
+PlacingWords.new

@@ -13,6 +13,7 @@ class PlacingWords < Processing::App
     image_shape = ImageShaper.new.shape(image, color('#000000'))
     placer = ShapeBasedPlacer.new(image_shape)
     WordCram.new(self)
+            .with_font('DejaVu Sans') # avoids missing 'sans font' warning
             .from_text_file(data_path('kari-the-elephant.txt'))
             .with_placer(placer)
             .with_nudger(placer)
@@ -22,6 +23,7 @@ class PlacingWords < Processing::App
     image_shape = ImageShaper.new.shape(image, color('#ffffff'))
     placer = ShapeBasedPlacer.new(image_shape)
     WordCram.new(self)
+            .with_font('DejaVu Sans')
             .from_text_file(data_path('kari-the-elephant.txt'))
             .with_placer(placer)
             .with_nudger(placer)

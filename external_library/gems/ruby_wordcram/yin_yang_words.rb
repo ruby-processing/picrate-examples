@@ -30,6 +30,7 @@ class YinYang < Processing::App
     image_shape = ImageShaper.new.shape(image, mask)
     placer = ShapeBasedPlacer.new(image_shape)
     WordCram.new(self)
+            .with_font('DejaVu Sans') # avoids missing 'sans font' warning
             .from_words(words.to_java(Word))
             .with_placer(placer)
             .with_nudger(placer)

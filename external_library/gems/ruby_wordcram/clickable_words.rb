@@ -21,12 +21,15 @@ class ClickableWords < Processing::App
     sketch_title 'Clickable Words'
     background(255)
     # Make the wordcram
-    @wc = WordCram.new(self).from_web_page('http://wikipedia.org')
-    wc.draw_all
+    @wc = WordCram.new(self).tap do |wordcram|
+      wordcram.from_web_page('http://wikipedia.org')
+      wordcram.with_font('DejaVu Sans')
+      wordcram.draw_all
+    end
     # Save the image of the wordcram
     @cached_image = get
     # Set up styles for when we draw stuff to the screen (later)
-    text_font(create_font('sans', 150))
+    text_font(create_font('DejaVu Sans', 150))
     text_align(CENTER, CENTER)
     @last_clicked_word = nil
   end

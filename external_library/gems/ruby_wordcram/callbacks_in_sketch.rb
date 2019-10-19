@@ -3,7 +3,7 @@ require 'ruby_wordcram'
 
 class Callbacks < Processing::App
   include Observer # include java interface as a module to enable callbacks
-  attr_reader :words_drawn, :words_skipped  
+  attr_reader :words_drawn, :words_skipped
 
   def settings
     size 1000, 500
@@ -15,8 +15,9 @@ class Callbacks < Processing::App
     @words_drawn = 0
     @words_skipped = 0
     WordCram.new(self)
-    .from_text_file(data_path('kari-the-elephant.txt'))
-    .draw_all
+      .from_text_file(data_path('kari-the-elephant.txt'))
+      .with_font('DejaVu Sans')
+      .draw_all
   end
 
   # keep snake case for java reflection

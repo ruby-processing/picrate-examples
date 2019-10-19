@@ -23,6 +23,7 @@ class WeightYourOwnWords < Processing::App
     end
 
     WordCram.new(self)
+    .with_font('DejaVu Sans') # avoids missing 'sans font' warning
     .from_words(alphabet.to_java(Word))
     .draw_all
   end

@@ -16,6 +16,7 @@ class HelloWorld < Processing::App
     word_array = [Word.new('Hello', 100), Word.new('WordCram', 60)].to_java(Word)
     # Pass in the sketch (the variable 'self'), so WordCram can draw to it.
     wordcram = WordCram.new(self)
+    .with_font('DejaVu Sans')
     .from_words(word_array) # Pass in the words to draw.
     .draw_all # Now we've created our WordCram, we can draw it
   end

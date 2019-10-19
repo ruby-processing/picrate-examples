@@ -12,6 +12,7 @@ class RenderToBuffer < Processing::App
     buffer.background(255)
     # red, black, and blue colors
     @wc = WordCram.new(self)
+                  .with_font('DejaVu Sans')
                   .from_text_file(data_path('usconst.txt'))
                   .to_canvas(buffer)
                   .with_colors(color(255, 0, 0), color(0), color(0, 0, 255))

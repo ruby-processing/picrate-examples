@@ -17,7 +17,7 @@ class RenderToPDF < Processing::App
     @wc = WordCram.new(self)
                   .from_text_file(data_path('usconst.txt'))
                   .withColors(*colors)
-                  .with_fonts('LiberationSans')
+                  .with_fonts('Liberation Sans')
                   .sized_by_weight(4, 140)
                   .min_shape_size(1)
                   .with_word_padding(1)

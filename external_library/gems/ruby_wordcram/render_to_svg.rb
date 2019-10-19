@@ -19,6 +19,7 @@ class RenderToSVG < Processing::App
     colors = WEB.map{ |web| color(web) } # map color strings to color int
     @wc = WordCram.new(self)
                   .from_words(words.to_java(Word))
+                  .with_font('DejaVu Sans')
                   .to_svg(data_path('letters.svg'), width, height)
                   .with_colors(*colors)
                   .sized_by_weight(150, 10)

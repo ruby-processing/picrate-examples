@@ -16,16 +16,17 @@ class Fruits < Processing::App
   def setup
     sketch_title 'Fruity Colors'
     background(255)
-    colors = FRUITS.zip(from_web_array(PALETTE)).to_h
+    colors = FRUITS.zip(web_to_color_array(PALETTE.to_java(:string))).to_h
     longest = FRUITS.max { |a, b| a.length <=> b.length }
     shortest = FRUITS.min { |a, b| a.length <=> b.length }
     words = FRUITS.map do |fruit|
       weight = norm_strict(fruit.length, longest.length, shortest.length)
       word = Word.new(fruit, weight)
-      word.set_font(create_font(data_path('MINYN___.TTF'), 1))
+      word.set_font(create_font(data_path('MINYN___.TTF'),1))
       word.set_color(colors[fruit])
     end
     WordCram.new(self)
+            .with_font('DejaVu Sans') # avoids missing 'sans font' warning
             .from_words(words.to_java(Word))
             .sized_by_weight(20, 80)
             .draw_all

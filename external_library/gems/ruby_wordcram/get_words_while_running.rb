@@ -8,6 +8,7 @@ class GetWordsWhileRunning < Processing::App
     sketch_title 'Get Words While Running'
     background(20, 20, 30)
     @wc = WordCram.new(self)
+    .with_font('DejaVu Sans') # Avoid missing fon warning
     .from_text_file(data_path('usconst.txt'))
     .with_color(color('#ededed'))
     .sized_by_weight(8, 70)
