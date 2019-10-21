@@ -8,7 +8,7 @@ class ColorPool < Processing::App
   end
   %w[colorist.HColorPool layout.HGridLayout].freeze.each do |klass|
     java_import "hype.extended.#{klass}"
-  end  
+  end
 
   PALETTE = %w[#FFFFFF #F7F7F7 #ECECEC #0095A8 #00616F #333333 #FF3300 #FF6600].freeze
 
@@ -20,8 +20,8 @@ class ColorPool < Processing::App
     sketch_title 'Color Pool'
     H.init(self)
     H.background(color('#242424'))
-    color_group = ColorGroup.from_web_array(PALETTE.to_java(:string)
-    colors = HColorPool.new(color_group.colors)
+
+    colors = HColorPool.new(web_to_color_array(PALETTE))
     pool = HDrawablePool.new(15_876)
     pool.auto_add_to_stage
     .add(HRect.new(5))

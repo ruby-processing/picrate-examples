@@ -21,8 +21,7 @@ class PolarLayout < Processing::App
   def setup
     sketch_title 'Polar Layout'
     H.init(self)
-    group = ColorGroup.from_web_array(PALETTE.to_java(:string))
-    @colors = HColorPool.new(group.colors)
+    @colors = HColorPool.new(web_to_color_array(PALETTE))
     H.background(group.last)
     H.use3D(true)
     @ranSeedNum = 1

@@ -15,7 +15,7 @@ class HRotateExample < Processing::App
   def setup
     sketch_title 'HRotate'
     H.init(self)
-    @colors = ColorGroup.from_web_array(PALETTE.to_java(:string)).colors
+    @colors = web_to_color_array(PALETTE)
     H.background(colors[0])
     H.use3D(true)
     # rotate on the x axis

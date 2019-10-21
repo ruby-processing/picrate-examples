@@ -20,8 +20,8 @@ class RandomTrigger < Processing::App
 
   def setup
     sketch_title 'Random Trigger'
-    group = ColorGroup.from_web_array(PALETTE.to_java(:string))
-    col = KEY.zip(group.colors).to_h
+    group = web_to_color_array(PALETTE)
+    col = KEY.zip(web_to_color_array(PALETTE)).to_h
     H.init(self)
     H.background(col[:background])
     # Create a new randTrigger with a 1 in 15 chance

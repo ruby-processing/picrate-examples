@@ -20,7 +20,7 @@ end
 
 def setup
   sketch_title('HOrbiter Example')
-  group = ColorGroup.from_web_array(PALETTE.to_java(:string))
+  group = web_to_color_array(PALETTE)
   H.init(self)
   H.background(color('#242424'))
   H.use3D(true)
@@ -34,7 +34,7 @@ def setup
   @pool = HDrawablePool.new(100)
   pool.autoAddToStage
       .add(HSphere.new)
-      .colorist(HColorPool.new(group.colors).fill_only)
+      .colorist(HColorPool.new(web_to_color_array(PALETTE)).fill_only)
       .on_create do |obj|
         ran_size = 10 + (rand(0..3) * 7)
         obj.size(ran_size).stroke_weight(0).no_stroke.anchor_at(H::CENTER)

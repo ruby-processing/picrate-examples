@@ -21,7 +21,7 @@ class ArcTesselation < Processing::App
     sketch_title 'Arc Tesselation'
     # create a java primitive array of signed int
     #  @cols = web_to_color_array(PALETTE)
-    @group = ColorGroup.from_web_array(PALETTE.to_java(:string))
+    @group = ColorGroup.from_web_array(PALETTE)
     @cols = group.colors
     stroke_weight 1.5
     stroke_cap SQUARE
@@ -71,8 +71,6 @@ class ArcTesselation < Processing::App
     @cols = group.colors
     puts group.ruby_string # prints out current web colors as an array of String
   end
-
-
 
   def key_typed
     case key

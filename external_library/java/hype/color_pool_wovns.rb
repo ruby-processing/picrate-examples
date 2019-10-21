@@ -21,8 +21,8 @@ class ColorPoolWovns < Processing::App
     sketch_title 'Color Pool Wovns'
     H.init(self)
     H.background(color('#242424'))
-    group = ColorGroup.from_web_array(PALETTE.to_java(:string))
-    colors = HColorPool.new(group.colors)
+    group = web_to_color_array(PALETTE)
+    colors = HColorPool.new(web_to_color_array(PALETTE))
     pool = HDrawablePool.new(15_876)
     pool.auto_add_to_stage
     .add(HRect.new(50))

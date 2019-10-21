@@ -23,7 +23,7 @@ class HOscillatorSketch < Processing::App
     .cols(90)
     pool.auto_add_to_stage
     .add(HRect.new(6).rounding(10).anchor_at(H::CENTER).no_stroke)
-    .colorist(HColorPool.new(ColorGroup.from_web_array(PALETTE.to_java(:string)).colors))
+    .colorist(HColorPool.new(web_to_color_array(PALETTE)))
     .layout(layout)
     .on_create do |obj|
       i = pool.current_index

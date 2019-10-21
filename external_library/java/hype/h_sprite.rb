@@ -25,7 +25,7 @@ class HSpriteSketch < Processing::App
     .add(HSprite.new(50,50).texture(HImage.new(data_path('tex1.png'))))
     .add(HSprite.new(50,50).texture(HImage.new(data_path('tex2.png'))))
     .add(HSprite.new(50,50).texture(HImage.new(data_path('tex3.png'))))
-    .colorist(HColorPool.new(ColorGroup.from_web_array(PALETTE.to_java(:string)).colors).fill_only)
+    .colorist(HColorPool.new(web_to_color_array(PALETTE)).fill_only)
     .on_create do |obj|
       i = pool.current_index
       obj.anchorAt(H::CENTER).rotation(45)

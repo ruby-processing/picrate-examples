@@ -1,13 +1,13 @@
 require 'picrate'
 
-# The sketch class
 class MagneticField < Processing::App
 
   load_library :hype
-  %w[H HDrawablePool HRect HShape].freeze.each do |klass|
+  %w[H HRect HShape HDrawablePool].freeze.each do |klass|
     java_import "hype.#{klass}"
   end
-  %w[layout.HGridLayout behavior.HMagneticField behavior.HSwarm].freeze.each do |klass|
+
+  %w[behavior.HMagneticField behavior.HSwarm layout.HGridLayout].freeze.each do |klass|
     java_import "hype.extended.#{klass}"
   end
 
