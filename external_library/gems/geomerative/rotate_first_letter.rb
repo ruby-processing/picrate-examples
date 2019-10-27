@@ -17,7 +17,7 @@ class RotateFirst < Processing::App
     background(255)
     fill(255, 102, 0)
     stroke(0)
-    @grp = RG.getText('Hola Mundo!', data_path('FreeSans.ttf'), 72, CENTER)
+    @grp = RG.getText('Hola Mundo!', create_font('DejaVu Sans'), 72, CENTER)
   end
 
   def draw

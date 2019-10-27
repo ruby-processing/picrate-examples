@@ -38,7 +38,7 @@ class PiCrateMerge < Processing::App
   def setup
     sketch_title TEXT.join ' '
     RG.init(self)
-    @my_font = RFont.new(data_path('FreeSans.ttf'), 200, CENTER)
+    @my_font = RFont.new(create_font('DejaVu Sans'), 200, CENTER)
     @stop = false
     no_fill
     stroke(255)
