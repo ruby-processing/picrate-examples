@@ -1,8 +1,11 @@
+#!/usr/bin/env jruby
+# frozen_string_literal:true
+
 require 'picrate'
 require 'geomerative'
 
 class HolaMundo < Processing::App
-  # Declare the objects we are going to use, so that they are accesible from setup() and from draw()
+  # Declare the objects we are going to use, so that they are accessible
   attr_reader :grp
 
   def settings
@@ -15,7 +18,7 @@ class HolaMundo < Processing::App
     background(255)
     fill(255, 102, 0)
     stroke(0)
-    @grp = RG.getText('Hola Mundo!', create_font('DejaVu Sans'), 72, CENTER)
+    @grp = RG.get_text('Hola Mundo!', data_path('FreeSans.ttf'), 72, CENTER)
   end
 
   def draw

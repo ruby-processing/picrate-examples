@@ -1,6 +1,6 @@
 require 'picrate'
 # Displays 4 sketchy rectangles with different hachuring styles.
-# Version for propane by Martin Prout
+# Version for picrate by Martin Prout
 # Author Jo Wood.
 class HachureStyles < Processing::App
   load_library :handy

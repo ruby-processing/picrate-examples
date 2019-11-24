@@ -2,7 +2,7 @@ require 'picrate'
 require 'forwardable'
 require 'json'
 # This example demonstrates how 'sketch data' can be retrieved from a json file
-# in propane. Note this sketch re-uses the Bubble class from the bubble
+# in picrate. Note this sketch re-uses the Bubble class from the bubble
 # library. The BubbleData class, can load, store and create instances of Bubble
 # (and request them to display and/or show their label, when 'mouse over').
 # @author Martin Prout, after Daniel Shiffmans version for processing

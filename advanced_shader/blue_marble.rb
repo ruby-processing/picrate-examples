@@ -1,7 +1,7 @@
 require 'picrate'
 # Earth model with bump mapping, specular texture and dynamic cloud layer.
 # Adapted from the THREE.js tutorial to processing by Andres Colubri,
-# translated to propane by Martin Prout:
+# translated to picrate by Martin Prout:
 # http://learningthreejs.com/blog/2013/09/16/how-to-make-the-earth-in-webgl/
 class BlueMarble < Processing::App
   attr_reader :earth, :clouds, :earth_shader, :cloud_shader, :earth_rotation

@@ -37,7 +37,7 @@ class ExtraBright < Processing::App
     x_incr = 0.000005
     y_incr = 0.000008
     RG.init(self)
-    my_font = RFont.new(create_font('DejaVu Sans'), 97, CENTER)
+    my_font = RFont.new(data_path('FreeSans.ttf'), 97, CENTER)
     RCommand.set_segment_length(1)
     RCommand.set_segmentator(RCommand::UNIFORMLENGTH)
     @my_agents = my_font.to_group(my_text).get_points.map do |point|

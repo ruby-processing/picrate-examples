@@ -38,7 +38,7 @@ class Deform < Processing::App
     @step = 3
     @my_text = 'BUBBLES'
     RG.init(self)
-    @my_font = RFont.new(create_font('DejaVu Sans'), 113, CENTER)
+    @my_font = RFont.new(data_path('FreeSans.ttf'), 113, CENTER)
     @stop_anime = false
     RCommand.setSegmentLength(10)
     RCommand.setSegmentator(RCommand::UNIFORMLENGTH)
