@@ -1,4 +1,6 @@
 #!/usr/bin/env jruby -w
+# frozen_string_literal: true
+
 require 'picrate'
 # Speed.
 # drag mouse down screen to increase speed
@@ -6,8 +8,8 @@ require 'picrate'
 # Uses the Movie.speed method to change
 # the playback speed.
 class Speed < Processing::App
-  load_libraries :video, :video_event
-  include_package 'processing.video'
+  load_libraries :video
+  java_import 'processing.video.Movie'
 
   attr_reader :mov
 
@@ -19,17 +21,14 @@ class Speed < Processing::App
   end
 
   def draw
+    return unless mov.available
+    
+    mov.read    
     image(mov, 0, 0)
     new_speed = map1d(mouse_y, (0..height), (0.1..2))
     mov.speed(new_speed)
     fill(255)
     text(format('%.2fX', new_speed), 10, 30)
-  end
-
-  # use camel case to match java reflect method
-  java_signature 'movieEvent(processing.event.Event m)'
-  def movieEvent(m)
-    m.read
   end
 
   def settings

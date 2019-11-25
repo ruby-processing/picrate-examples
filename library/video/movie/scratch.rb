@@ -1,4 +1,6 @@
 #!/usr/bin/env jruby -w
+# frozen_string_literal: true
+
 require 'picrate'
 # Scratch
 # by Andres Colubri.
@@ -22,14 +24,14 @@ class Scratch < Processing::App
   end
 
   def draw
-    begin
-      mov.read
-      # A new time position is calculated using the current mouse location:
-      t = mov.duration * map1d(mouse_x, (0..width), (0..1.0))
-      mov.play
-      mov.jump(t)
-      mov.pause
-    end if mov.available?
+    return unless mov.available
+
+    mov.read
+    # A new time position is calculated using the current mouse location:
+    t = mov.duration * map1d(mouse_x, (0..width), (0..1.0))
+    mov.play
+    mov.jump(t)
+    mov.pause
     image(mov, 0, 0)
   end
 

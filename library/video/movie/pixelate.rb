@@ -1,47 +1,42 @@
-#!/usr/bin/env jruby -w
+# frozen_string_literal: true
+
 require 'picrate'
-#
-# Pixelate
-# by Hernando Barragan.
-#
-# Load a QuickTime file and display the video signal
-# using rectangles as pixels by reading the values stored
-# in the current video frame pixels array.
+# features PiCrate grid method (avoids nested loops)
 class Pixelate < Processing::App
   load_library :video
-  include_package 'processing.video'
+  java_import 'processing.video.Movie'
 
   BLOCK_SIZE = 10
-
   attr_reader :mov, :num_pixels_wide, :num_pixels_high
 
   def setup
-    sketch_title 'Pixelate'
-    no_stroke
-    @mov = Movie.new(self, data_path('transit.mov'))
+    noStroke
+    @mov = Movie.new(self, data_path('launch2.mp4'))
+    mov.loop
     @num_pixels_wide = width / BLOCK_SIZE
     @num_pixels_high = height / BLOCK_SIZE
-    mov.loop
+    puts num_pixels_wide
   end
 
   # Display values from movie
   def draw
     return unless mov.available
 
-    movie_color = []
     mov.read
     mov.load_pixels
-    grid(width, height, BLOCK_SIZE, BLOCK_SIZE) do |i, j|
-      movie_color << mov.get(i, j)
+    mov_colors [] # start with an empty Array
+    grid(height, width, BLOCK_SIZE, BLOCK_SIZE) do |j, i|
+      mov_colors << mov.get(i, j)
     end
-    grid(num_pixels_wide, num_pixels_high) do |i, j|
-      fill(movie_color[j * num_pixels_wide + i])
+    background(255)
+    grid(num_pixels_high, num_pixels_wide) do |j, i|
+      fill(mov_colors[j * num_pixels_wide + i])
       rect(i * BLOCK_SIZE, j * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE)
     end
   end
 
   def settings
-    size 640, 360, P2D
+    size(560, 406)
   end
 end
 

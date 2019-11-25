@@ -1,8 +1,10 @@
 #!/usr/bin/env jruby -w
+# frozen_string_literal: true
+
 require 'picrate'
 # Loop.
 #
-# Shows how to load and play a QuickTime movie file.
+# Shows how to load and play a movie file.
 class Loop < Processing::App
   load_libraries :video
   include_package 'processing.video'
@@ -19,6 +21,7 @@ class Loop < Processing::App
 
   def draw
     return unless movie.available
+
     movie.read
     image(movie, 0, 0, width, height)
   end

@@ -11,7 +11,7 @@ require 'picrate'
 # codec, at least in its current version.
 class Reverse < Processing::App
   load_libraries :video, :video_event
-  include_package 'processing.video'
+  java_import 'processing.video.Movie'
 
   attr_reader :mov, :speed_set, :once
 
