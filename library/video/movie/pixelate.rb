@@ -24,7 +24,7 @@ class Pixelate < Processing::App
 
     mov.read
     mov.load_pixels
-    mov_colors [] # start with an empty Array
+    mov_colors = [] # start with an empty Array
     grid(height, width, BLOCK_SIZE, BLOCK_SIZE) do |j, i|
       mov_colors << mov.get(i, j)
     end
