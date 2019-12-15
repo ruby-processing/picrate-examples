@@ -7,14 +7,14 @@ class Tick
   include Processing::Proxy
 
   def noteOn(_dur)
-    hat.trigger if hatRow[beat]
-    snare.trigger if snrRow[beat]
-    kick.trigger if kikRow[beat]
+    hat.trigger if hatRow[$beat]
+    snare.trigger if snrRow[$beat]
+    kick.trigger if kikRow[$beat]
   end
 
   def noteOff
     # next beat
-    @beat = (beat + 1) % 16
+    $beat = ($beat + 1) % 16
     # set the new tempo
     out.setTempo(bpm)
     # play this again right now, with a sixteenth note duration
