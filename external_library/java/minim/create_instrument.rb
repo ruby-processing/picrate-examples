@@ -27,12 +27,12 @@ class CreateInstrument < Processing::App
     minim = Minim.new(self)
     @out = minim.getLineOut
     # when providing an Instrument, we always specify start time and duration
-    out.playNote(0.0, 0.9, SineInstrument.new(97.99))
-    out.playNote(1.0, 0.9, SineInstrument.new(123.47))
+    out.playNote(0.0, 0.9, SineInstrument.new(out, 97.99))
+    out.playNote(1.0, 0.9, SineInstrument.new(out, 123.47))
     # we can use the Frequency class to create frequencies from pitch names
-    out.playNote(2.0, 2.9, SineInstrument.new(Frequency.ofPitch('C3').asHz))
-    out.playNote(3.0, 1.9, SineInstrument.new(Frequency.ofPitch('E3').asHz))
-    out.playNote(4.0, 0.9, SineInstrument.new(Frequency.ofPitch('G3').asHz))
+    out.playNote(2.0, 2.9, SineInstrument.new(out, Frequency.ofPitch('C3').asHz))
+    out.playNote(3.0, 1.9, SineInstrument.new(out, Frequency.ofPitch('E3').asHz))
+    out.playNote(4.0, 0.9, SineInstrument.new(out, Frequency.ofPitch('G3').asHz))
   end
 
   def draw

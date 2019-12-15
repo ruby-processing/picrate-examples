@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-java_import 'ddf.minim.Minim'
-
 %w[Frequency Instrument Line Oscil Waves].each do |klass|
   java_import "ddf.minim.ugens.#{klass}"
 end
@@ -10,14 +8,14 @@ end
 # that includes Instrument interface (as a module).
 class SineInstrument
   include Instrument
-  include Processing::Proxy
 
-  attr_reader :wave, :amp_env
+  attr_reader :wave, :amp_env, :out, :tone_instrument
 
-  def initialize(frequency)
+  def initialize(out, frequency)
     # make a sine wave oscillator
     # the amplitude is zero because
     # we are going to patch a Line to it anyway
+    @out = out
     @wave = Oscil.new(frequency, 0, Waves::SINE)
     @amp_env = Line.new
     amp_env.patch(wave.amplitude)
