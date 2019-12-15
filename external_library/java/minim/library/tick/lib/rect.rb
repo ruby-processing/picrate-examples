@@ -20,7 +20,7 @@ class Rect
   end
 
   def mouse_pressed
-    if mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY <= y + h
+    if mouse_x >= x && mouse_x <= x + w && mouse_y >= y && mouse_y <= y + h
       steps[stepId] = !steps[stepId]
     end
   end

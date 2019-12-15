@@ -16,6 +16,7 @@ class DrumMachine < Processing::App
   attr_reader :minim, :out, :kick, :snare, :hat, :bpm, :beat, :buttons
   attr_reader :kikRow, :snrRow, :hatRow
   def setup
+    sketch_title 'Drum Machine'
     minim = Minim.new(self)
     @out   = minim.getLineOut
     @hatRow = Array.new(16, false)
@@ -27,10 +28,9 @@ class DrumMachine < Processing::App
     # load all of our samples, using 4 voices for each.
     # this will help ensure we have enough voices to handle even
     # very fast tempos.
-    kick = Sampler.new(data_path('BD.wav'), 4, minim)
-    snare = Sampler.new(data_path('SD.wav'), 4, minim)
-    hat   = Sampler.new(data_path('CHH.wav'), 4, minim)
-
+    @kick = Sampler.new(data_path('BD.wav'), 4, minim)
+    @snare = Sampler.new(data_path('SD.wav'), 4, minim)
+    @hat   = Sampler.new(data_path('CHH.wav'), 4, minim)
     # patch samplers to the output
     kick.patch(out)
     snare.patch(out)
