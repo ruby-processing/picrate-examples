@@ -14,6 +14,7 @@ class DrumMachine < Processing::App
   java_import 'ddf.minim.ugens.Sampler'
   attr_reader :minim, :out, :kick, :snare, :hat, :bpm, :buttons
   attr_reader :kikRow, :snrRow, :hatRow
+  attr_accessor :beat
   def setup
     sketch_title 'Drum Machine'
     minim = Minim.new(self)
@@ -23,7 +24,7 @@ class DrumMachine < Processing::App
     @kikRow = Array.new(16, false)
     @buttons = []
     @bpm = 120
-    $beat = 0
+    @beat = 0
     # load all of our samples, using 4 voices for each.
     # this will help ensure we have enough voices to handle even
     # very fast tempos.
@@ -50,9 +51,9 @@ class DrumMachine < Processing::App
     # text(frameRate, width - 60, 20)
     buttons.each(&:draw)
     stroke(128)
-    ($beat % 4).zero? ? fill(200, 0, 0) : fill(0, 200, 0)
+    (beat % 4).zero? ? fill(200, 0, 0) : fill(0, 200, 0)
     # beat marker
-    rect(10 + $beat * 24, 35, 14, 9)
+    rect(10 + beat * 24, 35, 14, 9)
   end
 
   def mouse_pressed
