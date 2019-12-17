@@ -19,7 +19,7 @@ indent_mode=2
 
 [project]
 name=picrate_samples
-base_path=/home/pi/picrate_samples
+base_path=/home/pi/projects/examples
 description=Exploring PiCrate
 file_patterns=*.rb;*.glsl;*.txt;
 
@@ -28,14 +28,9 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=3
-FILE_NAME_0=667;Ruby;0;EUTF-8;0;1;0;%2Fhome%2Fpi%2Fprojects%2Fpicrate_sketches%2Fbasics%2Farrays%2Farray.rb;0;2
-FILE_NAME_1=1664;Ruby;0;EUTF-8;0;1;0;%2Fhome%2Fpi%2Fprojects%2Fpicrate_sketches%2Fadvanced_data%2Fload_save_json.rb;0;2
-FILE_NAME_2=259;Sh;0;EUTF-8;0;1;0;%2Fhome%2Fpi%2Fjruby_install.sh;0;2
-FILE_NAME_3=236;Sh;0;EUTF-8;0;1;0;%2Fhome%2Fpi%2Ftest.sh;0;2
 
 [VTE]
-last_dir=/home/pi
+last_dir=/home/pi/projects/examples
 
 [build-menu]
 EX_00_LB=_Execute

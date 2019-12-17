@@ -17,6 +17,7 @@ class Loop < Processing::App
   end
 
   def setup
+    sketch_title "Press \'l\' key to loop"
     minim = Minim.new(self)
     @groove = minim.load_file(data_path('groove.mp3'), 2048)
   end
