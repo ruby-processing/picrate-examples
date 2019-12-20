@@ -75,11 +75,11 @@ class BackgroundSubtraction < Processing::App
 
   def key_pressed
     video.load_pixels
-    @background_pixels = video.pixels.clone
+    @background_pixels = video.pixels.copy
   end
 
   def settings
-    size(960, 720, P2D)
+    size(480, 360, P2D)
   end
 end
 
