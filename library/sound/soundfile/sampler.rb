@@ -45,8 +45,8 @@ class Sampler < Processing::App
         end
         play_sound[i] = rand(0..1)
       end
+      @trigger = millis + rand(200..1000)
     end
-    @trigger = millis + rand(200..1000)
   end
 end
 
