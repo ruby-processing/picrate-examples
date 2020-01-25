@@ -14,7 +14,8 @@ class PinkNoise < Processing::App
   end
 
   def setup
-    background(255)
+    background(255)    
+    sketch_title 'Pink Noise'
     # Create and start the noise generator
     @noise = PinkNoise.new(self)
     noise.play

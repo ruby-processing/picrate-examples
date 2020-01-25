@@ -1,0 +1,34 @@
+# -*- encoding: utf-8 -*-
+
+PRWD = File.expand_path(__dir__)
+
+desc 'run demo'
+task :default => [:all]
+
+desc 'autorun all samples'
+task :all do
+  Rake::Task[:soundfile].execute
+  Rake::Task[:oscillators].execute
+  Rake::Task[:noise].execute
+  Rake::Task[:effects].execute
+end
+
+desc 'run soundfile samples'
+task :soundfile do
+  sh "cd #{PRWD}/soundfile && rake"
+end
+
+desc 'oscillators'
+task :oscillators do
+  sh "cd #{PRWD}/oscillators && rake"
+end
+
+desc 'noise'
+task :noise do
+  sh "cd #{PRWD}/noise && rake"
+end
+
+desc 'effects'
+task :effects do
+  sh "cd #{PRWD}/effects && rake"
+end

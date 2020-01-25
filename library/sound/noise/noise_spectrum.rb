@@ -20,6 +20,7 @@ class NoiseSpectrum < Processing::App
 
   def setup
     background(255)
+    sketch_title 'Noise Spectrum'
     @current = 0
     # Create the noises
     @noises = PRE.map { |pre| eval("#{pre}Noise.new(self)") }

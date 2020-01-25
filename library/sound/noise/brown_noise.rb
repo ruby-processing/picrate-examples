@@ -15,6 +15,7 @@ class BrownNoise < Processing::App
 
   def setup
     background(255)
+    sketch_title 'Brown Noise'
     # Create and start the noise generator
     @noise = BrownNoise.new(self)
     noise.play

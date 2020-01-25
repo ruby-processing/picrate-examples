@@ -15,6 +15,7 @@ class WhiteNoise < Processing::App
 
   def setup
     background(255)
+   sketch_title 'White Noise'
     # Create and start the noise generator
     @noise = WhiteNoise.new(self)
     noise.play

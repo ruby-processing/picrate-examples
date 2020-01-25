@@ -18,6 +18,7 @@ class PlaySoundFile < Processing::App
 
   def setup
     size(640, 360)
+    sketch_title 'Play Sound File'
     background(255)
     # Load a soundfile
     @soundfile = SoundFile.new(self, data_path('vibraphon.aiff'))

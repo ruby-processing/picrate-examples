@@ -18,6 +18,7 @@ class Keyboard < Processing::App
 
   def setup
     size(640, 360)
+    sketch_title 'Keyboard'
     background(255)
     # Load the soundfiles from data folder
     @files = (0...NUM_SOUND).map do |i|
