@@ -23,7 +23,6 @@ class ExponentialTrend < Processing::App
     # Prepare the points for the plot
     @points = GPointsArray.new(N_POINTS)
     @plot = GPlot.new(self)
-    puts plot.inspect
     @log_scale = false
     N_POINTS.times do
       x_value = rand(10..200)
