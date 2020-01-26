@@ -1,17 +1,20 @@
+# frozen_string_literal: true
 
 require 'picrate'
 require 'csv'
-
+# Grafica Sketch
 class Oktoberfest < Processing::App
-
   load_library :grafica
   java_import 'grafica.GPlot'
   java_import 'grafica.GPointsArray'
 
-  MONTH_NAMES = %w[January February March April May June July August September October November December]
-  DAYS_PER_MONTH = [31,28,31,30,31,30,31,31,30,31,30,31]
-  DAYS_PER_MONTH_LEAP_YEAR = [31,29,31,30,31,30,31,31,30,31,30,31]
-
+  MONTH_NAMES = %w[
+    January February March April May June July August September October November
+    December
+  ].freeze
+  DAYS_PER_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31].freeze
+  DAYS_PER_MONTH_LEAP_YEAR = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+                             .freeze
   attr_reader :plot, :points_oktoberfest, :points_elections
 
   def settings
@@ -29,23 +32,27 @@ class Oktoberfest < Processing::App
     @points_oktoberfest = GPointsArray.new
     @points_elections = GPointsArray.new
 
-    CSV.foreach(data_path('OktoberfestVSGermanElections.csv'), headers: true) do |row|
+    CSV.foreach(
+      data_path('OktoberfestVSGermanElections.csv'), headers: true
+    ) do |row|
       year = row['year'].to_i
       month = row['month'].to_i
       day = row['day'].to_i
       date = get_exact_date(year, month, day)
       oktoberfest_count = row['oktoberfest'].to_i
       elections_count = row['bundestagswahl'].to_i
-      points_oktoberfest.add(date, oktoberfest_count, MONTH_NAMES[month])
-      points_elections.add(date, elections_count, MONTH_NAMES[month])
+      month_name = MONTH_NAMES[month]
+      points_oktoberfest.add(date, oktoberfest_count, month_name)
+      points_elections.add(date, elections_count, month_name)
     end
     # Create the plot
     @plot = GPlot.new(self)
     plot.set_dim(700, 300)
     plot.set_title_text('Oktoberfest vs. Bundestagwahl Google search history')
-    plot.getXAxis.set_axis_label_text('Year')
+    x_axis = plot.getXAxis
+    x_axis.set_axis_label_text('Year')
     plot.getYAxis.set_axis_label_text('Google normalized searches')
-    plot.getXAxis.setNTicks(10)
+    x_axis.setNTicks(10)
     plot.set_points(points_oktoberfest)
     plot.set_line_color(color(100, 100, 100))
     plot.add_layer('German elections day', points_elections)
@@ -74,7 +81,8 @@ class Oktoberfest < Processing::App
 
   def get_exact_date(year, month, day)
     leap = (year % 4).zero? && !(year % 100).zero? || (year % 400).zero?
-    return year + (month + (day - 1)/ DAYS_PER_MONTH[month]) / 12.0 unless leap
+    return year + (month + (day - 1) / DAYS_PER_MONTH[month]) / 12.0 unless leap
+
     year + (month + (day - 1) / DAYS_PER_MONTH_LEAP_YEAR[month]) / 12.0
   end
 end
