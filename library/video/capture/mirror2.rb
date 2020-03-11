@@ -1,4 +1,6 @@
 #!/usr/bin/env jruby -w
+# frozen_string_literal: true
+
 require 'picrate'
 # Mirror 2
 # by Daniel Shiffman.
@@ -8,19 +10,15 @@ require 'picrate'
 class Mirror2 < Processing::App
   load_library :video
   java_import 'processing.video.Capture'
-  attr_reader :video, :cols, :rows
+  attr_reader :video
   # Size of each cell in the grid
   CELL_SIZE = 15
 
   def setup
     sketch_title 'mirror'
-    frame_rate(30)
-    @cols = width / CELL_SIZE
-    @rows = height / CELL_SIZE
     colorMode(RGB, 255, 255, 255, 100)
-    # Try test_capture to find name of your Camera
-    @video = Capture.new(self, width, height, "UVC Camera (046d:0825)")
-    # Start capturing the images from the camera
+    # Try test_capture to find the name of your Camera
+    @video = Capture.new(self, width, height, 'UVC Camera (046d:0825)')
     video.start
   end
 
@@ -30,25 +28,18 @@ class Mirror2 < Processing::App
     background(0, 0, 255)
     video.read
     video.load_pixels
-    grid(cols, rows) do |i, j|
-      x = i * CELL_SIZE
-      y = j * CELL_SIZE
-      loc = (width - x -1 + y * width)# Reversing x to mirror the image
-      col = video.pixels[loc]
-      # Code for drawing a single rect
-      # Using translate in order for rotation to work properly
-      # rectangle size is based on brightness
-      sz = g.brightness(col) / 255 * CELL_SIZE
+    grid(width, height, CELL_SIZE, CELL_SIZE) do |x, y|
+      loc = (width - x - 1 + y * width) # Reversing x to mirror the image
+      sz = brightness(video.pixels[loc]) / 255 * CELL_SIZE
       rect_mode(CENTER)
       fill(255)
       no_stroke
-      # Rects are larger than the cell for some overlap
-      rect(x + CELL_SIZE / 2, y + CELL_SIZE / 2, sz, sz)
+      rect(x + CELL_SIZE / 2.0, y + CELL_SIZE / 2.0, sz, sz)
     end
   end
 
   def settings
-    size(480, 360)
+    size(960, 544)
   end
 end
 

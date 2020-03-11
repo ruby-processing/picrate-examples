@@ -54,7 +54,7 @@ class DavidTour
   def translate_rules(prod)
     swap = false
     [].tap do |points| # An array to store lines as a flat array of points
-      prod.each do |ch|
+      prod.scan(/./) do |ch|
         case ch
         when 'F'
           new_pos = pos + Vec2D.from_angle(theta) * draw_length

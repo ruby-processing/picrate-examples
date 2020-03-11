@@ -55,7 +55,7 @@ class SnakeKolam
 
     def render                     # NB not using affine transforms here
       turtle = [xpos, ypos, 0]
-      production.each do |element|
+      production.scan(/./) do |element|
         case element
         when 'F'
           turtle = draw_line(turtle, draw_length)

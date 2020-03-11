@@ -43,7 +43,7 @@ class PenroseColored
     repeated = %w[1 2 3 4]
     pen = Turtle.new(pos, theta, RED) # simple Struct for pen, symbol
     stack = [] # simple array for stack
-    production.each do |element|
+    production.scan(/./) do |element|
       case element
       when 'F'
         pen = draw_line(pen, draw_length)

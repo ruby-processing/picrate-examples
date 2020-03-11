@@ -85,7 +85,7 @@ class Pentagonal
       shape.stroke 200
       shape.stroke_weight 3
       shape.vertex(pos.x, pos.y)
-      production.each do |element|
+      production.scan(/./) do |element|
         case element
         when 'F'
           @pos = forward(pos)

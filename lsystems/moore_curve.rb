@@ -65,7 +65,7 @@ class MooreCurve
 
   def translate_rules(prod)
     [].tap do |pts| # An array to store line vertices as Vec2D
-      prod.each do |ch|
+      prod.scan(/./) do |ch|
         case ch
         when 'F'
           pts << vec

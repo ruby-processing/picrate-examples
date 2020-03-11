@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'picrate'
 # The Mandelbrot Set
 # by Daniel Shiffman.
@@ -46,6 +48,7 @@ class Mandelbrot < Processing::App
           b = twoab + y
           # Infinity in our finite world is simple, let's just consider it 16
           break if dist(aa, bb, 0, 0) > 4.0 # Bail
+
           n += 1
         end
         # We color each pixel based on how long it takes to get to infinity
