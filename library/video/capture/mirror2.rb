@@ -13,6 +13,7 @@ class Mirror2 < Processing::App
   attr_reader :video
   # Size of each cell in the grid
   CELL_SIZE = 15
+  OFFSET = CELL_SIZE / 2.0
 
   def setup
     sketch_title 'mirror'
@@ -34,7 +35,7 @@ class Mirror2 < Processing::App
       rect_mode(CENTER)
       fill(255)
       no_stroke
-      rect(x + CELL_SIZE / 2.0, y + CELL_SIZE / 2.0, sz, sz)
+      rect(x + OFFSET, y + OFFSET, sz, sz)
     end
   end
 
