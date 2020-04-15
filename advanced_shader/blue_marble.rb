@@ -1,24 +1,24 @@
+# frozen_string_literal: true
+
 require 'picrate'
 # Earth model with bump mapping, specular texture and dynamic cloud layer.
 # Adapted from the THREE.js tutorial to processing by Andres Colubri,
 # translated to picrate by Martin Prout:
 # http://learningthreejs.com/blog/2013/09/16/how-to-make-the-earth-in-webgl/
 class BlueMarble < Processing::App
-  attr_reader :earth, :clouds, :earth_shader, :cloud_shader, :earth_rotation
+  attr_reader :cloud_shader, :clouds, :earth, :earth_shader, :earth_rotation
   attr_reader :clouds_rotation, :target_angle
 
-  SHADERS = %w(EarthFrag.glsl EarthVert.glsl CloudFrag.glsl CloudVert.glsl).freeze
-  SHADER_NAME = %i(earth_frag earth_vert cloud_frag cloud_vert).freeze
-  IMAGES = %w(earthmap1k earthcloudmap earthcloudmaptrans earthbump1k earthspec1k).freeze
-  IMAGE_NAME = %i(earth_tex cloud_tex alpha_tex bump_map spec_map).freeze
+  SHADER_NAME = %i[earth_frag earth_vert cloud_frag cloud_vert].freeze
+  IMAGE_NAME = %i[earth_tex cloud_tex alpha_tex bump_map spec_map].freeze
 
   def setup
     sketch_title 'Blue Marble'
     @earth_rotation = 0
     @clouds_rotation = 0
-    glsl_files = SHADERS.map { |shade| data_path(shade) }
-    shaders = SHADER_NAME.zip(glsl_files.to_java(:string)).to_h
-    images = IMAGES.map { |img| load_image(data_path("#{img}.jpg")) }
+    glsl_files = shader_paths.to_java(:string)
+    shaders = SHADER_NAME.zip(glsl_files).to_h
+    images = init_images
     textures = IMAGE_NAME.zip(images).to_h
     @earth_shader = load_shader(shaders[:earth_frag], shaders[:earth_vert])
     earth_shader.set('texMap', textures[:earth_tex])
@@ -53,6 +53,18 @@ class BlueMarble < Processing::App
     shape(clouds)
     pop_matrix
     @clouds_rotation += 0.001
+  end
+
+  def init_images
+    %w[earthmap1k earthcloudmap earthcloudmaptrans earthbump1k earthspec1k].map do |img|
+      load_image(data_path(format('%<name>s.jpg', name: img)))
+    end
+  end
+
+  def shader_paths
+    %w[EarthFrag EarthVert CloudFrag CloudVert].map do |shader|
+      data_path(format('%<name>s.glsl', name: shader))
+    end
   end
 
   def settings

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-# jscottpilgrim, control_panel by monkstone
+# From an original sketch by Jonathon Scott (aka jscottpilgrim)
+# modified by Martin Prout (aka monkstone) to have a control_panel gui
 
 require 'picrate'
 
@@ -17,9 +18,10 @@ class JuliaBrot < Processing::App
     size 1000, 1000, P2D
   end
 
-  def update_zoom
+  def control_update
     @zoom = scaling / width
     @y_range = scaling * height / width
+    @center = Vec2D.new(-x_center, y_center)
   end
 
   def setup
@@ -31,19 +33,14 @@ class JuliaBrot < Processing::App
       c.slider :scaling, 1.0..10.0, DEFAULT
       c.slider :x_center, -3.0..3.0, 0.0
       c.slider :y_center, -3.0..3.0, 0.0
-      c.checkbox :hi_res, false
-      c.menu :mode, %i[mandelbrot julia julia_loop]
+      c.menu :mode, %w[mandelbrot julia julia_loop], 'mandelbrot'
     end
-    @center = Vec2D.new(x_center, y_center)
-    @y_range = scaling * height / width
-    @zoom = scaling / width
-
+    control_update
     @julia_param = Vec2D.new(0.1994, -0.613)
 
     # length of julia loop in frames
     @loop_length = 120
     # initialize some parameters
-    # @mode = :mandelbrot
     @line_start = Vec2D.new(0, 0)
     @julia_loop_begin = Vec2D.new(0, 0)
     @julia_loop_end = Vec2D.new(0, 0)
@@ -61,13 +58,13 @@ class JuliaBrot < Processing::App
   end
 
   def init_shaders
-    %w[MandelbrotDE MandelbrotDE-double JuliaDE JuliaDE-double].map do |shader|
+    %w[MandelbrotDE JuliaDE].map do |shader|
       init_shader(shader)
     end
   end
 
   def mandelbrot_draw
-    s = @hi_res ? shaders[1] : shaders[0]
+    s = shaders[0]
     s.set 'center', center.x, center.y
     s.set 'zoom', zoom
     shader s
@@ -85,7 +82,7 @@ class JuliaBrot < Processing::App
   end
 
   def julia_draw
-    s = @hi_res ? shaders[3] : shaders[2]
+    s = shaders[1]
     s.set 'center', center.x, center.y
     s.set 'zoom', zoom
     s.set 'juliaParam', @julia_param.x, @julia_param.y
@@ -112,13 +109,13 @@ class JuliaBrot < Processing::App
   end
 
   def draw
-    update_zoom
+    control_update
     case @mode
-    when :mandelbrot
+    when 'mandelbrot'
       mandelbrot_draw
-    when :julia
+    when 'julia'
       julia_draw
-    when :julia_loop
+    when 'julia_loop'
       julia_loop_draw
     end
     # show where line for julia loop would be drawn when clicked
@@ -133,7 +130,7 @@ class JuliaBrot < Processing::App
   def reset!
     # reset to standard view mandelbrot
     reset_parameters
-    @mode = :mandelbrot
+    @mode = 'mandelbrot'
     @line_drawing = false
     @line_start = Vec2D.new(0, 0)
     @julia_loop_begin = Vec2D.new(0, 0)
@@ -144,8 +141,8 @@ class JuliaBrot < Processing::App
   def reset_parameters
     @center = Vec2D.new 0, 0
     @scaling = DEFAULT
-    @y_range = scaling * height / width
-    @zoom = scaling / width
+    @y_range = DEFAULT * height / width
+    @zoom = DEFAULT / width
   end
 
   def mouse_clicked
@@ -159,10 +156,10 @@ class JuliaBrot < Processing::App
       @line_drawing = false
       reset_parameters
       @zoom = scaling / width
-      @mode = :julia_loop
+      @mode = 'julia_loop'
       @loop_time = 0
     else
-      if @mode == :mandelbrot
+      if @mode.eql? 'mandelbrot'
         # from mandelbrot use mouse to choose seed(s) for julia set(s)
         if mouse_button == RIGHT
           # start line for julia loop
@@ -181,7 +178,7 @@ class JuliaBrot < Processing::App
             map1d(mouse_y, (0..height), (maxmin.loy..maxmin.hiy))
           )
           reset_parameters
-          @mode = :julia
+          @mode = 'julia'
         end
       end
     end
