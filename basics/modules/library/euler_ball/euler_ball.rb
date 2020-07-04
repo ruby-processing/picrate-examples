@@ -40,7 +40,7 @@ end
 
 # Convenient boundary class, we only include MathTool module for constrain
 class Bounds
-  include Processing::Proxy
+  include MathTool
   attr_reader :low, :high, :inside
   def initialize(lower:, upper:)
     @low = lower

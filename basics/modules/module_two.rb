@@ -1,6 +1,6 @@
-require 'picrate'
-# Drawolver: draw 2D & revolve 3D
+# frozen_string_literal: true
 
+require 'picrate'
 # Example to show how to use the VecMath library.
 # Also the Array is extended to yield one_of_each using a module
 # pair of pts. See the drawolver library. Also features the use each_cons,
@@ -11,32 +11,33 @@ class ModuleTwo < Processing::App
 
   def setup
     sketch_title 'Module Two'
-    @renderer = Java::MonkstoneVecmath::GfxRender.new(self.g)
+    @renderer = Java::MonkstoneVecmath::GfxRender.new(g)
     frame_rate 30
     reset_scene
   end
 
   def draw
     background 0
-    if (!drawing_mode)
+    unless drawing_mode
       translate(width / 2, height / 2)
       rotate_x rot_x
       rotate_y rot_y
       @rot_x += 0.01
       @rot_y += 0.02
-      translate(-width/2, -height/2)
+      translate(-width / 2, -height / 2)
     end
     no_fill
     stroke 255
     points.each_cons(2) { |ps, pe| line ps.x, ps.y, pe.x, pe.y }
     return if drawing_mode
+
     stroke 125
     fill 120
     lights
     ambient_light 120, 120, 120
     vertices.each_cons(2) do |r1, r2|
       begin_shape(TRIANGLE_STRIP)
-      ext_array = [r1,r2].extend ExtendedArray # extend an instance of Array
+      ext_array = [r1, r2].extend ExtendedArray # extend an instance of Array
       ext_array.one_of_each do |v1, v2|
         v1.to_vertex(renderer)
         v2.to_vertex(renderer)
@@ -68,18 +69,18 @@ class ModuleTwo < Processing::App
 
   def recalculate_shape
     @vertices = []
-    points.each_cons(2) do |ps, pe|
+    points.each_cons(2) do |ps, _pe|
       b = points.last - points.first
       len = b.mag
       b.normalize!
       a = ps - points.first
       dot = a.dot b
-      b = b * dot
+      b *= dot
       normal = points.first + b
       c = ps - normal
       nlen = c.mag
       vertices << []
-      (0..TAU).step(PI/15) do |ang|
+      (0..TAU).step(PI / 15) do |ang|
         e = normal + c * Math.cos(ang)
         e.z = c.mag * Math.sin(ang)
         vertices.last << e
@@ -97,12 +98,12 @@ module ExtendedArray
   # send one item from each array, expects array to be 2D:
   # array [[1,2,3], [a,b,c]] sends
   # [1,a] , [2,b] , [3,c]
-  def one_of_each(&block)
+  def one_of_each
     i = 0
     one = self[0]
     two = self[1]
     mi = one.length > two.length ? two.length : one.length
-    while i < mi do
+    while i < mi
       yield(one[i], two[i])
       i += 1
     end

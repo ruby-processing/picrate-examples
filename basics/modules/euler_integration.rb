@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 require 'picrate'
-require_relative 'euler_ball'
 # Euler Integration (v01)
 # pos  +=  spd
 # sketch after Ira Greenwood
 # Features first class keyword arguments, and use of modules
 class EulerIntegration < Processing::App
+  load_library :euler_ball
 
   attr_reader :ball
 
