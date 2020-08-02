@@ -5,7 +5,7 @@ require 'picrate'
 # the mouse to zoom and set the density of the matrix by typing numbers 1-5.
 # This program displays a series of lines with their heights corresponding to
 # a color value read from an image.
-ColoredExtrusion < Processing::App
+class ColoredExtrusion < Processing::App
   def setup
     sketch_title 'Colored Extrusion'
     no_fill
@@ -33,22 +33,20 @@ ColoredExtrusion < Processing::App
     else
       @sval -= 0.01
     end
-    @sval = constrain @sval, 1.0, 2.5
+    @sval = @sval.clamp(1.0, 2.5)
     translate width / 2 + @nmx * @sval - 100, height / 2 + @nmy * @sval - 200, -50
     scale @sval
     rotate_z PI / 9 - @sval + 1
     rotate_x PI / @sval / 8 - 0.125
     rotate_y @sval / 8 - 0.125
     translate -width / 2, -height / 2
-    (0...@img.height).step(@res) do |y|
-      (0...@img.width).step(@res) do |x|
-        rr = red @img_pixels[y][x]
-        gg = green @img_pixels[y][x]
-        bb = blue @img_pixels[y][x]
-        tt = rr + gg + bb
-        stroke rr, gg, gg
-        line y, x, tt / 10 - 20, y, x, tt / 10
-      end
+    grid(@img.width, @img.height, @res, @res) do |x, y|
+      rr = red @img_pixels[y][x]
+      gg = green @img_pixels[y][x]
+      bb = blue @img_pixels[y][x]
+      tt = rr + gg + bb
+      stroke rr, gg, gg
+      line y, x, tt / 10 - 20, y, x, tt / 10
     end
   end
 

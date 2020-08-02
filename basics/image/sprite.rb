@@ -17,12 +17,12 @@ class Sprite < Processing::App
     difx = mouse_x - @xpos - @teddy.width / 2
     if difx.abs > 1.0
       @xpos += difx / @drag
-      @xpos = constrain(@xpos, 0, width - @teddy.width / 2)
+      @xpos = @xpos.clamp(0, width - @teddy.width / 2)
     end
     dify = mouse_y - @ypos - @teddy.height / 2
     if dify.abs > 1.0
       @ypos += dify/@drag
-      @ypos = constrain(@ypos, 0, height - @teddy.height / 2)
+      @ypos = @ypos.clamp(0, height - @teddy.height / 2)
     end
     image @teddy, @xpos, @ypos
   end

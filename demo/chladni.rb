@@ -68,8 +68,8 @@ class Chladni < Processing::App
       end
     end
     @recompute = true
-    @m = constrain(m, 1, 20)
-    @n = constrain(n, 1, 20)
+    @m = m.clamp(1, 20)
+    @n = n.clamp(1, 20)
   end
 end
 

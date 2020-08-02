@@ -7,7 +7,6 @@ require 'picrate'
 module SeekingNeural
 
   class Perceptron
-    include MathTool # for constrain method
     # Perceptron is created with n weights and learning constant
     def initialize(n, c)
       @weights = Array.new(n) { rand(0..1.0) }
@@ -19,7 +18,7 @@ module SeekingNeural
     def train(forces, error)
       trained = @weights.zip(forces.map { |f| f.to_a }
         .map { |a, b| (a * error.x + b * error.y) * @c })
-      .map { |w, c| constrain(w + c, 0, 1.0) }
+      .map { |w, c| (w + c).clamp(0, 1.0) }
       @weights = trained
     end
 
@@ -34,7 +33,7 @@ module SeekingNeural
   # Daniel Shiffman <http://www.shiffman.net>
 
   class Vehicle
-    include Processing::Proxy, Math
+    include Processing::Proxy
     MAX_SPEED = 4
     MAX_FORCE = 0.1
 
@@ -57,8 +56,8 @@ module SeekingNeural
       @location += @velocity
       # Reset acceleration to 0 each cycle
       @acceleration *= 0
-      @location.x = constrain(location.x, 0, width)
-      @location.y = constrain(location.y, 0, height)
+      @location.x = location.x.clamp(0, width)
+      @location.y = location.y.clamp(0, height)
     end
 
     def apply_force(force)
