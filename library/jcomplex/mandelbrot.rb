@@ -5,7 +5,7 @@ require 'picrate'
 # optimized (update_pixels instead of set)
 # no need to loop
 class Mandelbrot < Processing::App
-
+  load_library :jcomplex
   def setup
     sketch_title 'Mandelbrot'
     load_pixels
@@ -15,7 +15,7 @@ class Mandelbrot < Processing::App
   # main drawing method
   def draw
     grid(900, 600) do |x, y|
-      c = Complex(
+      c = JComplex.new(
         map1d(x, (0...900), (-2.5..1.3)), map1d(y, (0...600), (-1.3..1.3))
       )
       # mandel will return 0..20 (20 is strong) map this to 255..0 (NB: reverse)
@@ -31,8 +31,7 @@ class Mandelbrot < Processing::App
     c = z
     while score < max
       # z = z^2 + c
-      z *= z
-      z += c
+      z = z.mul(z).add(c)
       break if z.abs2 > 4
       score += 1
     end
