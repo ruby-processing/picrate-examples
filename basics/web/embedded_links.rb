@@ -1,8 +1,7 @@
 require 'picrate'
 # Loading URLs.
 #
-# Click on the left button to open a different URL in the same window (Only
-# works online). Click on the right button to open a URL in a new browser window.
+# A linux Specific version is fine on the RaspberryPI
 class EmbeddedLinks < Processing::App
 
   def setup
@@ -23,9 +22,13 @@ class EmbeddedLinks < Processing::App
     line 155,  85, 155, 100
   end
 
+  def open(url)
+    system 'xdg-open', url
+  end
+
   def mouse_pressed
-    link 'https://ruby-processing.github.io/PiCrate/' if @over_left_button
-    link 'https://ruby-processing.github.io/' if @over_right_button
+    open('https://ruby-processing.github.io/PiCrate/') if @over_left_button
+    open('https://monkstone.github.io/') if @over_right_button
   end
 
   def mouse_moved
