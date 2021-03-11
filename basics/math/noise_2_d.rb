@@ -16,8 +16,6 @@ class Noise2D < Processing::App
     background 0
     load_pixels
     xoff = 0.0
-    detail = map1d(mouse_x, (0..width), (0.1..0.6))
-    noise_detail(8, detail)
     (0...width).each do |x|
       xoff += @increment
       yoff = 0.0
@@ -28,6 +26,18 @@ class Noise2D < Processing::App
       end
     end
     update_pixels
+  end
+
+  def mouse_pressed
+    mode = NoiseMode::OPEN_SMOOTH
+    sketch_title mode.description
+    noise_mode mode
+  end
+
+  def mouse_released
+    mode = NoiseMode::DEFAULT
+    sketch_title mode.description
+    noise_mode mode
   end
 
   def settings
