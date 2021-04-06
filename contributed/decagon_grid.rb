@@ -1,11 +1,11 @@
 #!/usr/bin/env jruby
-
 require 'picrate'
 # Example of a grid of decagons with perlin noise after Lenny Herzog
 class DecagonGrid < Processing::App
+  load_library :pdf
   NOISE_STRENGTH = 80.0
   THETA = 36
-  attr_reader :version, :noise_generator
+  attr_reader :version, :save, :noise_generator
 
   def setup
     sketch_title 'Decagon Grid'
@@ -13,7 +13,7 @@ class DecagonGrid < Processing::App
     @version = 0
     @save = false
     @noise_generator = lambda do |x, y, seed|
-      NOISE_STRENGTH * noise(
+      NOISE_STRENGTH * SmoothNoise.tnoise(
         x / 150.0,
         y / 150.0 + seed * 2,
         seed
@@ -22,6 +22,7 @@ class DecagonGrid < Processing::App
   end
 
   def draw
+    begin_record(PDF, data_path("Line_#{version}.pdf")) if save
     background(255)
     no_fill
     stroke(0)
@@ -38,14 +39,15 @@ class DecagonGrid < Processing::App
       end
       end_shape(CLOSE)
     end
+    return unless save
+
+    end_record
+    @version += 1
+    @save = false
   end
 
   def mouse_pressed
-    noise_mode NoiseMode::OPEN_SMOOTH
-  end
-
-  def mouse_pressed
-    noise_mode NoiseMode::DEFAULT
+    @save = true
   end
 
   def settings

@@ -45,11 +45,9 @@ class NoiseAnimation < Processing::App
       point(pos.x, pos.y)
     end
     # puts frame_count
-    save_frame(data_path('fr###.tiff'))
-
+    # save_frame(data_path('fr###.tiff'))
     return unless frame_count == FRAMES
 
-    # save_frame(data_path('expt6.png'))
     no_loop
     puts 'finished'
   end

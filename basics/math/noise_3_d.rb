@@ -5,12 +5,12 @@ require 'picrate'
 # Using 3D noise to create simple animated texture.
 # Here, the third dimension ('z') is treated as time.
 class Noise3D < Processing::App
-  attr_reader :increment, :z_increment
+  attr_reader :bright, :inc, :z_increment, :smth
 
   def setup
     sketch_title 'Noise 3D'
     frame_rate 30
-    @increment = 0.01
+    @inc = 0.01
     @zoff = 0.0
     @z_increment = 0.02
   end
@@ -18,30 +18,20 @@ class Noise3D < Processing::App
   def draw
     background 0
     load_pixels
-    xoff = 0.0
-    (0...width).each do |x|
-      xoff += increment
-      yoff = 0.0
-      (0...height).each do |y|
-        yoff += increment
-        bright = noise(xoff, yoff, @zoff) * 255
-        pixels[x + y * width] = color(bright, bright, bright)
+    grid(width, height) do |x, y|
+      if smth
+        @bright = (SmoothNoise.noise(x * inc, y * inc, @zoff) + 1) * 128
+      else
+        @bright = (noise(x * inc, y * inc, @zoff) + 1) * 128
       end
+      pixels[x + y * width] = color(bright, bright, bright)
     end
     update_pixels
     @zoff += z_increment
   end
 
   def mouse_pressed
-    mode = NoiseMode::OPEN_SMOOTH
-    sketch_title mode.description
-    noise_mode mode
-  end
-
-  def mouse_released
-    mode = NoiseMode::DEFAULT
-    sketch_title mode.description
-    noise_mode mode
+    @smth = !smth
   end
 
   def settings

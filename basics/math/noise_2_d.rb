@@ -1,43 +1,35 @@
 # frozen_string_literal: true
 require 'picrate'
 
+# Noise2D
+# by Daniel Shiffman.
+#
+# Using 2D noise to create simple texture.
 class Noise2D < Processing::App
-  # Noise2D
-  # by Daniel Shiffman.
-  #
-  # Using 2D noise to create simple texture.
+  attr_reader :smth
 
   def setup
     sketch_title 'Noise 2D'
-    @increment = 0.02
+    @inc = 0.02
+    @smth = false
   end
 
   def draw
     background 0
     load_pixels
-    xoff = 0.0
-    (0...width).each do |x|
-      xoff += @increment
-      yoff = 0.0
-      (0...height).each do |y|
-        yoff += @increment
-        bright = noise(xoff, yoff) * 255
-        pixels[x + y * width] = color(bright)
+    grid(width, height) do |x, y|
+      if smth
+        bright = (SmoothNoise.noise(x * @inc, y * @inc) + 1) * 128
+      else
+        bright = (noise(x * @inc, y * @inc) + 1) * 128
       end
+      pixels[x + y * width] = color(bright)
     end
     update_pixels
   end
 
   def mouse_pressed
-    mode = NoiseMode::OPEN_SMOOTH
-    sketch_title mode.description
-    noise_mode mode
-  end
-
-  def mouse_released
-    mode = NoiseMode::DEFAULT
-    sketch_title mode.description
-    noise_mode mode
+    @smth = !smth
   end
 
   def settings

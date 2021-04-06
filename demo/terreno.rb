@@ -1,3 +1,4 @@
+#!/usr/bin/env jruby
 require 'picrate'
 
 #Terreno
@@ -27,7 +28,7 @@ class Terreno < Processing::App
     for y in 0..@filas
       xoff = 0
       for x in 0..@col
-        @terreno["#{x}.#{y}"]= p5map noise(xoff,yoff), 0, 1, -65, 65
+        @terreno["#{x}.#{y}"]= map1d tnoise(xoff,yoff), -1.0..1.0, -65..65
         xoff += 0.2
       end
       yoff += 0.2
@@ -46,14 +47,6 @@ class Terreno < Processing::App
       end
       end_shape(CLOSE)
     end
-  end
-
-  def mouse_pressed
-    noise_mode NoiseMode::FAST_TERRAIN
-  end
-
-  def mouse_released
-    noise_mode NoiseMode::SMOOTH_TERRAIN
   end
 end
 

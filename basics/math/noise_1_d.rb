@@ -2,6 +2,7 @@
 require 'picrate'
 
 class Noise1D < Processing::App
+  attr_reader :smth
 
   def setup
     sketch_title 'Noise 1D'
@@ -9,27 +10,20 @@ class Noise1D < Processing::App
     @x_increment = 0.01
     background 0
     no_stroke
+    @smth = false
   end
 
   def draw
     fill 0, 10
     rect 0, 0, width, height
-    n = noise(@xoff) * width
+    n = smth ? SmoothNoise.noise(@xoff) * width : noise(@xoff) * width
     @xoff += @x_increment
     fill 200
     ellipse n, height / 2, 64, 64
   end
 
   def mouse_pressed
-    mode = NoiseMode::OPEN_SMOOTH
-    sketch_title mode.description
-    noise_mode mode
-  end
-
-  def mouse_released
-    mode = NoiseMode::DEFAULT
-    sketch_title mode.description
-    noise_mode mode
+    @smth = !smth
   end
 
   def settings

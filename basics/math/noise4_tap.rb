@@ -4,7 +4,7 @@ require 'picrate'
 Coord = Struct.new(:mx, :my, :mz, :az, :al)
 
 class ForD < Processing::App
-  attr_reader :half_w, :half_h, :radius, :spin_x, :spin, :coords
+  attr_reader :half_w, :half_h, :radius, :spin_x, :spin, :coords, :smth
 
   def settings
     size(480, 480, P3D)
@@ -20,7 +20,7 @@ class ForD < Processing::App
     @radius = height * 0.4
     @spin_x = 0.0
     @spin = 0.0
-
+    @smth = false
     angle = ((1.0 + Math.sqrt(5)) / 2.0 - 1) * TWO_PI # Fibonacci distribution
     @coords = (0..2_000).map do |i|
       inc = Math.asin(i / 1_000.0 - 1.0) # inclination
@@ -31,9 +31,9 @@ class ForD < Processing::App
         rotate_y(az)
         rotate_z(inc)
         translate(radius, 0, 0)
-        coord.mx = model_x(0, 0, 0) * 0.007
-        coord.my = model_y(0, 0, 0) * 0.007
-        coord.mz = modelZ(0, 0, 0) * 0.007
+        coord.mx = g.model_x(0, 0, 0) * 0.007
+        coord.my = g.model_y(0, 0, 0) * 0.007
+        coord.mz = g.model_z(0, 0, 0) * 0.007
         coord.az = az
         coord.al = inc
         pop_matrix
@@ -54,10 +54,14 @@ class ForD < Processing::App
       rotate_y(ci.az)
       rotate_z(ci.al)
       translate(radius, 0, 0)
-      dst = (modelZ(0, 0, 0) + half_h) / 2 + 32
+      dst = (g.model_z(0, 0, 0) + half_h) / 2 + 32
       stroke(dst, dst * 0.5, dst * 0.25)
       #  4D Simplex noise(x, y, z, time)
-      ang = noise(ci.mx, ci.my, ci.mz, frame_count * 0.007) * TWO_PI
+      if smth
+        ang = SmoothNoise.noise(ci.mx, ci.my, ci.mz, frame_count * 0.007) * TWO_PI
+      else
+        ang = noise(ci.mx, ci.my, ci.mz, frame_count * 0.007) * TWO_PI
+      end
       rotate_x(ang)
       line(0, 0, 0, 0, 15, 0)
       translate(0, 15, 0)
@@ -71,15 +75,7 @@ class ForD < Processing::App
   end
 
   def mouse_pressed
-    mode = NoiseMode::OPEN_SMOOTH
-    sketch_title mode.description
-    noise_mode mode
-  end
-
-  def mouse_released
-    mode = NoiseMode::DEFAULT
-    sketch_title mode.description
-    noise_mode mode
+    @smth = !smth
   end
 end
 
