@@ -1,9 +1,10 @@
+#!/usr/bin/env jruby -w
 # frozen_string_literal: true
+require 'picrate'
 # Adapted to use Processing Vec2D and Vec3D classes by Martin Prout
 
 # Use Face Struct triangle 'mesh'.
 Face = Struct.new(:a, :b, :c) # triangle mesh face
-require 'picrate'
 
 # Monkey patch the Vec3D class to support rotations
 Vec3D.class_eval do # re-open the Vec3D class to add the rotate methods

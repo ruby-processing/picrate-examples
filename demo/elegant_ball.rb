@@ -1,3 +1,4 @@
+#!/usr/bin/env jruby -w
 require 'picrate'
 # After a vanilla processing sketch by
 # Ben Notorianni aka lazydog

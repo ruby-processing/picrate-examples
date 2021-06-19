@@ -1,6 +1,7 @@
+#!/usr/bin/env jruby -w
 require 'picrate'
 # Taken from the Processing Examples.
-class Reflection < Processing::App
+class ReflectionSketch < Processing::App
 
   def setup
     sketch_title 'Reflection'
@@ -10,13 +11,13 @@ class Reflection < Processing::App
   end
 
   def draw
-    background          0
-    translate           width / 2, height / 2
+    background 0
+    translate width / 2, height / 2
     lights
-    light_specular      1, 1, 1
-    directional_light   0.8, 0.8, 0.8, 0, 0, -1
-    specular            mouse_x.to_f / width.to_f
-    sphere              50
+    light_specular  1, 1, 1
+    directional_light 0.8, 0.8, 0.8, 0, 0, -1
+    specular mouse_x.to_f / width.to_f
+    sphere 50
   end
 
   def settings
@@ -24,4 +25,4 @@ class Reflection < Processing::App
   end
 end
 
-Reflection.new
+ReflectionSketch.new

@@ -1,3 +1,5 @@
+#!/usr/bin/env jruby -w
+
 # frozen_string_literal: true
 
 require 'picrate'
