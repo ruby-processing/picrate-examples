@@ -14,8 +14,8 @@ class ReflectionSketch < Processing::App
     background 0
     translate width / 2, height / 2
     lights
-    light_specular  1, 1, 1
-    directional_light 0.8, 0.8, 0.8, 0, 0, -1
+  #  light_specular  1, 1, 1
+  #  directional_light 0.8, 0.8, 0.8, 0, 0, -1
     specular mouse_x.to_f / width.to_f
     sphere 50
   end

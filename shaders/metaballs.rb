@@ -1,3 +1,4 @@
+#!/usr/bin/env jruby -w
 require 'picrate'
 
 class Metaballs < Processing::App

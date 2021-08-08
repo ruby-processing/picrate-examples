@@ -2,7 +2,7 @@ require 'picrate'
 require 'ruby_wordcram'
 
 # Literate colors from picrate
-# uses `from_web_array` to create a hash of fruity colors
+# uses `web_to_color_array` to create a hash of fruity colors
 # to join two words as `cherry\ red` use back slash
 class Fruits < Processing::App
 
