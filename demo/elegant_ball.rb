@@ -7,7 +7,6 @@ require 'picrate'
 java_import 'monkstone.vecmath.GfxRender'
 
 class ElegantBall < Processing::App
-
   def settings
     size(750, 750, P3D)
   end

@@ -14,12 +14,7 @@
 
 require 'picrate'
 
-module Renderer
-  java_import 'monkstone.vecmath.ShapeRender'
-end
-
 class HeightMap < Processing::App
-  include Renderer
   SHADERS = %w(displaceFrag.glsl displaceVert.glsl).freeze
   SHADER_NAME = %i(frag vert).freeze
   DIM = 300 # the grid dimensions of the heightmap

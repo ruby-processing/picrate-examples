@@ -6,9 +6,8 @@ require 'picrate'
 # Use Face Struct triangle 'mesh'.
 Face = Struct.new(:a, :b, :c) # triangle mesh face
 
-# Monkey patch the Vec3D class to support rotations
-Vec3D.class_eval do # re-open the Vec3D class to add the rotate methods
-  def rotate_y!(theta)
+Vec3D.class_eval do # re-open the Vec3D class to add rotation functionality
+  def rotate_y(theta)
     co = Math.cos(theta)
     si = Math.sin(theta)
     xx = co * x - si * z
@@ -17,7 +16,7 @@ Vec3D.class_eval do # re-open the Vec3D class to add the rotate methods
     self
   end
 
-  def rotate_x!(theta)
+  def rotate_x(theta)
     co = Math.cos(theta)
     si = Math.sin(theta)
     zz = co * z - si * y
@@ -27,8 +26,12 @@ Vec3D.class_eval do # re-open the Vec3D class to add the rotate methods
   end
 end
 
-# After a toxiclibs "MeshDoodle" sketch by Karsten Schmidt
 class Doodle < Processing::App
+  # After a toxiclibs "MeshDoodle" sketch by Karsten Schmidt
+  # Adapted to use JRubyArt Vec2D and Vec3D classes by Martin Prout
+  # Note: The extension of Vec3D class to support rotations, and the ruby Struct
+  # Face for triangle 'mesh'. Also an example of AppRenderer for Vec3D => vertex
+
   attr_reader :prev, :p, :q, :rotation, :faces, :pos, :weight
 
   def settings
@@ -68,8 +71,8 @@ class Doodle < Processing::App
   def mouse_moved
     # get 3D rotated mouse position
     @pos = Vec3D.new(mouse_x - width / 2, mouse_y - height / 2, 0)
-    pos.rotate_x!(rotation.x)
-    pos.rotate_y!(rotation.y)
+    pos.rotate_x(rotation.x)
+    pos.rotate_y(rotation.y)
     # use distance to previous point as target stroke weight
     @weight += (sqrt(pos.dist(prev)) * 2 - weight) * 0.1
     # define offset points for the triangle strip
@@ -84,10 +87,9 @@ class Doodle < Processing::App
     @q = b
   end
 
-  # An example of GfxRenderer usage for Vec3D => vertex conversion
   def renderer
-    @renderer ||= Processing::Render::GfxRender.new(self.g)
-  end
+    @renderer ||= GfxRender.new(self.g)
+  end  
 end
 
 Doodle.new
