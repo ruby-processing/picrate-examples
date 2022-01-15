@@ -1,3 +1,6 @@
+#!/usr/bin/env jruby
+# frozen_string_literal: true
+
 require 'picrate'
 # Interactive Toroid
 # by Ira Greenberg.
@@ -108,7 +111,7 @@ class Toroid < Processing::App
   end
 
   def renderer
-    @renderer ||= GfxRender.new(self.g)
+    @renderer ||= GfxRender.new(g)
   end
 end
 

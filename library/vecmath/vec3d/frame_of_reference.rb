@@ -1,4 +1,6 @@
+#!/usr/bin/env jruby
 # frozen_string_literal: true
+
 require 'picrate'
 require 'arcball'
 require_relative 'library/geometry/geometry'
@@ -114,7 +116,7 @@ class FrameOfReference < Processing::App
   end
 
   def renderer
-    @renderer ||= GfxRender.new(self.g)
+    @renderer ||= GfxRender.new(g)
   end
 end
 

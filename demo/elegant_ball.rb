@@ -36,7 +36,7 @@ class ElegantBall < Processing::App
   end
 
   def renderer
-    @renderer ||= GfxRender.new(self.g)
+    @renderer ||= GfxRender.new(g)
   end
 
   # Generate a vector whose components change smoothly over time in the range

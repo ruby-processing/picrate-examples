@@ -24,7 +24,7 @@ class CairoTiling < Processing::App
 
   # An example of GfxRenderer usage for Vec3D => vertex conversion
   def renderer
-    @renderer ||= GfxRender.new(self.g)
+    @renderer ||= GfxRender.new(g)
   end
 
   def composite_tile(x, y, s)

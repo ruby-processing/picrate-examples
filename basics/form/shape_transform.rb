@@ -16,7 +16,7 @@ class ShapeTransform < Processing::App
 
   def setup
     sketch_title 'Shape Transform'
-    @renderer = GfxRender.new(self.g)
+    @renderer = GfxRender.new(g)
     no_stroke
     @angle_inc = PI / 300
     @pts = 4

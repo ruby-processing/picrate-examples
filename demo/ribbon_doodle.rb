@@ -88,7 +88,7 @@ class Doodle < Processing::App
   end
 
   def renderer
-    @renderer ||= GfxRender.new(self.g)
+    @renderer ||= GfxRender.new(g)
   end  
 end
 

@@ -40,7 +40,7 @@ class SoftBody < Processing::App
   end
 
   def renderer
-    @renderer ||= GfxRender.new(self.g)
+    @renderer ||= GfxRender.new(g)
   end
 
   def draw_shape

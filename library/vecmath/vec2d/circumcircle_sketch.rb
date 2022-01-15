@@ -35,7 +35,7 @@ class CircumcircleSketch < Processing::App
     @font = create_font('Liberation Sans', 16, true)
     @points = TPoints.new
     ellipse_mode RADIUS
-    @renderer = GfxRender.new(self.g)
+    @renderer = GfxRender.new(g)
   end
 
   def draw
